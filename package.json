@@ -5,6 +5,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
+    "pug:docs": "pug -O docs/_models/options.js docs/{phi,code,visual,base,obj,comp-typo,comp-ui,help,atom}.jade",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/chharvey/still-alive#readme",
   "devDependencies": {
+    "pug-cli": "^1.0.0-alpha6",
     "sitepage": "^1.0.0"
   }
 }
