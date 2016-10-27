@@ -1,0 +1,25 @@
+{
+  "name": "still-alive",
+  "version": "0.0.0",
+  "description": "Theme and Style Guide for my website, chharvey.github.io",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chharvey/still-alive.git"
+  },
+  "keywords": [
+    "theme",
+    "style",
+    "guide"
+  ],
+  "author": "Chris Harvey <chrisharvey2pi@gmail.com> (https://chharvey.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chharvey/still-alive/issues"
+  },
+  "homepage": "https://github.com/chharvey/still-alive#readme"
+}
