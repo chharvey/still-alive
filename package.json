@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/chharvey/still-alive/issues"
   },
-  "homepage": "https://github.com/chharvey/still-alive#readme"
+  "homepage": "https://github.com/chharvey/still-alive#readme",
+  "devDependencies": {
+    "sitepage": "^1.0.0"
+  }
 }
