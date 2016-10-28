@@ -1,5 +1,20 @@
 doctype html
 html(lang="en")
+  mixin doctoc(args)
+    //- NOTE parameter validation
+    -
+      var pages   = args.pages   || []
+      var classes = args.classes || {}
+      var depth   = +args.depth  || 0
+    ol(class=classes.listclasses)
+      each item in pages
+        unless item.isHidden()
+          li(class=classes.itemclasses)
+            a(class=classes.linkclasses href=item.url())= item.name()
+            if item.description()
+              = ': ' + item.description()
+            if item.findAll().length && depth > 0
+              +doctoc({pages: item.findAll(), classes: (classes.sub || {}), depth: depth-1})
   block vars
   head
     title= page.name() + ' | Site Design'
@@ -14,16 +29,13 @@ html(lang="en")
         header
           block mainHeader
             h1= page.name()
-    footer: nav
-      
+          nav
+            h2 Table of Contents
+            block toc
+              +doctoc({pages: page.findAll(), classes: null, depth: Infinity})
     footer: nav.Bc
-      ol.Anc
-        li: a.Crumb(href="../index.html") Home
-        li: a.Crumb(href="../home/web.html") Web
-      ul.Sib
-        each item in Styleguide.PAGES.findAll()
-          li: a.Crumb(href=item.url())= item.name()
-      ul.Child
+      h1 Sitemap
+      +doctoc({pages: Styleguide.PAGES.findAll(), classes: { listclasses: 'Sib', linkclasses: 'Crumb' }, depth: 0})
     block scripts
       script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
       script(src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,https://chharvey.github.io/chhlib/mathjax-localconfig.js")

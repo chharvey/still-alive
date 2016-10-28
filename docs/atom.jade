@@ -4,13 +4,6 @@ block append vars
   - var page = Styleguide.PAGES.find('atom.html')
 
 block append mainHeader
-  nav#table-contents
-    h2 Table of Contents
-    ol
-      li: a(href="#table-contents") Table of Contents
-      li: a(href="#font-families") Font Families
-      li: a(href="#font-sizes") Font Sizes
-      li: a(href="#colors") Colors
 
 block append main
   include _includes/_snippets.jade
