@@ -1,0 +1,109 @@
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*\
+    still-alive  |  chharvey.github.io project stylesheet
+\*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+@import (css) url('https://cdn.rawgit.com/chharvey/xmeter/v5.2.0/xmeter.css');
+@import (css) url('https://cdn.rawgit.com/chharvey/bangs/v0.9.0/bangs.css');
+@import (css) url('https://cdn.rawgit.com/chharvey/lux-nox/v1.2.0/lux-nox.css');
+
+
+/*================================*\
+    still-alive.less
+\*================================*/
+
+
+/*
+ * # CONTENTS
+ *
+ * dev.css........................development mode: fixes for imported stylesheets
+ *
+ * ## BASE
+ * base...........................unclassed html elements
+ *
+ * ## OBJECTS
+ * Box............................[description]
+ * Textbox........................[description]
+ * GoldenContainer................[description]
+ *
+ * ## COMPONENTS
+ * ### TYPOGRAPHIC
+ * #### BLOCK-LEVEL
+ * Document.......................[description]
+ * Subhead........................[description]
+ * FolioTitle.....................[description]
+ * Lede...........................[description]
+ * Caption........................[description]
+ * Pullquote......................[description]
+ * ListAction.....................[description]
+ * ListFootnotes..................[description]
+ * Table..........................[description]
+ * #### TEXT-LEVEL
+ * Acro...........................[description]
+ * Camo...........................camouflaged hyperlinks
+ *
+ * ### UI (USER INTERACTION)
+ * Alert..........................[description]
+ * Label..........................[description]
+ * Badge..........................[description]
+ * Key............................[description]
+ * breadcrumbs....................[description]
+ * IconButton.....................[description]
+ *
+ * ## OVERRIDES
+ * helpers.css....................context-agnostic helper classes
+ *
+ * ## ATOMS
+ * width...........................[description]
+ * padding.........................[description]
+ * font-size.......................[description]
+ * font-family.....................[description]
+ * background-color................[description]
+ *
+ * shame.css......................hacks and styles I haven’t figured out where to put yet
+ */
+
+///////////////////////////////////////////////////////////////////////////////
+
+
+@import url('_src/_dev.less');
+
+@import url('_src/_base.less');
+
+@import url('_src/_obj.Box.less');
+@import url('_src/_obj.Textbox.less');
+@import url('_src/_obj.GoldenContainer.less');
+// @import url('_src/_object.media.less');
+
+@import url('_src/_comp.typo.Document.less');
+@import url('_src/_comp.typo.Subhead.less');
+@import url('_src/_comp.typo.FolioTitle.less');
+@import url('_src/_comp.typo.Lede.less');
+@import url('_src/_comp.typo.Caption.less');
+@import url('_src/_comp.typo.Pullquote.less');
+@import url('_src/_comp.typo.ListAction.less');
+@import url('_src/_comp.typo.ListFootnotes.less');
+@import url('_src/_comp.typo.Table.less');
+@import url('_src/_comp.typo.FigImg.less');
+
+@import url('_src/_comp.typo.Acro.less');
+@import url('_src/_comp.typo.Camo.less');
+
+@import url('_src/_comp.ui.Alert.less');
+@import url('_src/_comp.ui.Label.less');
+@import url('_src/_comp.ui.Badge.less');
+// @import url('_src/_comp.ui.Tag.less');
+@import url('_src/_comp.ui.Key.less');
+@import url('_src/_component.breadcrumbs.less');
+@import url('_src/_comp.ui.IconButton.less');
+// @import url('_src/_component.masthead.less');
+
+@import url('_src/_helpers.less');
+@import url('_src/_atom.width.less');
+@import url('_src/_atom.padding.less');
+@import url('_src/_atom.font-size.less');
+@import url('_src/_atom.font-family.less');
+@import url('_src/_atom.list-style-type.less');
+@import url('_src/_atom.background-color.less');
+@import url('_src/_shame.less');
