@@ -7,6 +7,7 @@
   "scripts": {
     "pug:docs": "pug -O docs/_models/options.js docs/{phi,code,visual,base,obj,comp-typo,comp-ui,help,atom}.jade",
     "lessc:core": "lessc  ./styles/still-alive.less  ./styles/still-alive.css",
+    "lessc:docs": "lessc  ./docs/styles/docs.less  ./docs/styles/docs.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
