@@ -1,0 +1,35 @@
+{
+  "name": "still-alive",
+  "version": "0.0.0",
+  "description": "Theme and Style Guide for my website, chharvey.github.io",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "pug:sg": "pug -O styleguide/_models/options.js styleguide/{phi,code,visual,base,obj,comp-typo,comp-ui,help,atom}.jade",
+    "lessc:core": "lessc  styles/still-alive.less  styles/still-alive.css",
+    "lessc:sg": "lessc  styleguide/styles/styleguide.less  styleguide/styles/styleguide.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chharvey/still-alive.git"
+  },
+  "keywords": [
+    "theme",
+    "style",
+    "guide"
+  ],
+  "author": "Chris Harvey <chrisharvey2pi@gmail.com> (https://chharvey.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chharvey/still-alive/issues"
+  },
+  "homepage": "https://github.com/chharvey/still-alive#readme",
+  "devDependencies": {
+    "less": "^2.7.1",
+    "lux-nox": "^1.2.0",
+    "pug-cli": "^1.0.0-alpha6",
+    "sitepage": "^1.0.0",
+    "xmeter": "^5.3.0"
+  }
+}
