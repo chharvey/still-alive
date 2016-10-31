@@ -11,17 +11,15 @@
 @import (reference) url('../../node_modules/xmeter/src/__tool.fontsize.less');
 @import (reference) url('../../node_modules/xmeter/src/__tool.delims.less');
 @import (reference) url('../../styles/_src/__settings.less');
+@import (reference) url('../../styles/_src/_helpers.less');
 
 
 /*++++++++++++++++++++++++++++++++*\
     #BASE
 \*++++++++++++++++++++++++++++++++*/
 body {
-  /* copied from _bground.less:.crossgrid-lined() */
-  background-image: url('../../core/images/crossgrid-lined.svg');
-  background-size: 1px 24px;
-  background-repeat: repeat;
-  background-position: left top;
+  .crossgrid-lined;
+  background-position: left top; // override .crossgrid-lined
 }
 // [data-bool="0"] {
 //   // color: #f2f7ff;
