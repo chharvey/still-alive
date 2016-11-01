@@ -56,17 +56,14 @@ block append main
       #[strong specific, opinionated styles for this site&rsquo;s codebase].
       This is not #[em the] rulebook for all projects.
       However, you may extend this guide to other projects if you wish.
-    section#textual-structure
-      h2 Textual Structure
-      section#whitespace
-        h3 Whitespace
+    +newSection(Styleguide.PAGES.find('code.html#textual-structure'))
+      +newSection(Styleguide.PAGES.find('code.html#whitespace'), 3)
         ul
           li Use whitespace consistently and to improve code readability.
           li Always use spaces, never tabs.
           li Never leave trailing whitespace at the end of a line.
           li Use spaces to horizontally align repeated text.
-      section#line-breaks-line-length
-        h3 Line Breaks &amp; Line Length
+      +newSection(Styleguide.PAGES.find('code.html#line-breaks-line-length'), 3)
         ul
           li Blank lines are permitted, but only if they do not contain any spaces.
           li Use blank lines #[em only] to separate code structures and improve readability.
@@ -75,17 +72,15 @@ block append main
             When writing long passages of prose (in HTML, etc.), use
             hard line breaks to wrap text. This will help diff tools and
             reduce merge conflicts.
-        section#exceptions
+        section
           h4 Exceptions
           ul
             li Line breaks may be omitted when multiple, parallel code structures can fit on one line.
             li Line breaks may be introduced to improve readability and produce more useful diffs.
-      section#indentation
-        h3 Indentation
+      +newSection(Styleguide.PAGES.find('code.html#indentation'), 3)
         ul
           li Use exactly two (2) spaces for each indent level.
-      section#html-specifics-example
-        h3 HTML Specifics &amp; Example
+      +newSection(Styleguide.PAGES.find('code.html#html-specifics-example'), 3)
         figure: pre.
           &lt;p&gt;99% of the time, block-level elements get their own line.&lt;/p&gt;
           &lt;div&gt;
@@ -111,8 +106,7 @@ block append main
                 the p gets its own line and is indented.&lt;/p&gt;
             &lt;/li&gt;
           &lt;/ul&gt;
-      section#css-specifics-example
-        h3 CSS Specifics &amp; Example
+      +newSection(Styleguide.PAGES.find('code.html#css-specifics-example'), 3)
         figure: pre.
           /* CSS selectors usually get their own line. */
           .class1 &gt; .child,
@@ -141,10 +135,8 @@ block append main
                -moz-transform: translate(100px) rotate(20deg);
                     transform: translate(100px) rotate(20deg);
           }
-    section#code-formatting
-      h2 Code Formatting
-      section#html-specifics
-        h3 HTML Specifics
+    +newSection(Styleguide.PAGES.find('code.html#code-formatting'))
+      +newSection(Styleguide.PAGES.find('code.html#html-specifics'), 3)
         ul
           li.
             Always use lowercase for names of tags and attributes.
@@ -196,8 +188,7 @@ block append main
             tr
               td: code &lt;input checked=""/&gt;
               td: code &lt;input checked/&gt;
-      section#css-less-specifics
-        h3 CSS/Less Specifics
+      +newSection(Styleguide.PAGES.find('code.html#css-less-specifics'), 3)
         ul
           li.
             Always use lowercase for tag selectors, and for property names and values.
@@ -240,8 +231,7 @@ block append main
             tr
               td: code .class::before { content: 'text'; }
               td: code .class::before { content: "text"; }
-      section#js-specifics
-        h3 JS Specifics
+      +newSection(Styleguide.PAGES.find('code.html#js-specifics'), 3)
         ul
           li In scripting (JS, PHP):
             ul
@@ -279,8 +269,7 @@ block append main
           ;(function sayMyName(testSubject) {
             console.log(testSubject.name)
           })(new TestSubject('Chell', function () { return true }))
-    section#accesibility
-      h2 Accessibility
+    +newSection(Styleguide.PAGES.find('code.html#accessibility'))
       ul
         li Always provide the #[code html[lang]] attribute.
         li Always provide text for the #[code img[alt]] attribute.
@@ -329,8 +318,7 @@ block append main
         li.
           Use exactly one #[code abbr] element per abbreviation/acronym per page, and
           always provide the #[code abbr[id]] and #[code abbr[title]] attributes.
-    section#optimization
-      h2 Optimization
+    +newSection(Styleguide.PAGES.find('code.html#optimization'))
       ul
         li Never use any of the following elements or attributes. Use CSS to achieve the desired effect.
           ul
@@ -382,10 +370,8 @@ block append main
           tr
             td: code line-height: 1.25;
             td: code line-height: 1.25em; line-height: 20px;
-    section#commenting
-      h2 Commenting
-      section#formatting
-        h3 Formatting
+    +newSection(Styleguide.PAGES.find('code.html#commenting'))
+      +newSection(Styleguide.PAGES.find('code.html#formatting'), 3)
         p Comment formatting is best shown by example:
         figure: pre.
           // Where available, always use
@@ -415,8 +401,7 @@ block append main
 
           /* this is a good comment! */
           /*this is a bad comment!*/
-      section#usage
-        h3 Usage
+      +newSection(Styleguide.PAGES.find('code.html#usage'), 3)
         p.
           This section describes the style we will be using to place comments in our codebase.
           It pertains mostly to CSS code, but it may be used for JavaScript as well. There is not
@@ -435,16 +420,14 @@ block append main
         p.
           There are three levels of commenting: those that deliniate the architecture of a file,
           those that describe individual code structures, and small developer notes.
-        section#architectural
-          h4 Architectural
+        +newSection(Styleguide.PAGES.find('code.html#architectural'), 4)
           p.
             Use comments to create a table of contents and headers in your source code.
             This is useful for big files that need to be split up into sections.
             It&rsquo;s good practice to include the filenames at the top of each partial so that
             they outline the files when concatenated.
             See #[a(href="#css-stylesheets") CSS anatomy] below for examples.
-        section#structural
-          h4 Structural
+        +newSection(Styleguide.PAGES.find('code.html#structural'), 4)
           p.
             Each code structure (pattern, object, component, class, function, etc.)
             deserves its own comment explaining
@@ -475,8 +458,7 @@ block append main
             .c-Pullquote__Src {
               ...
             }
-        section#developmental
-          h4 Developmental
+        +newSection(Styleguide.PAGES.find('code.html#developmental'), 4)
           p.
             These are small, one-line comments explaining why some particular thing was done.
             These comments are very likely to be mixed in with the code itself.
@@ -485,10 +467,8 @@ block append main
             For example, use them when you use #[code !important] in CSS,
             or when you use #[dfn#magic-number magic numbers]&mdash;numbers that just so happen
             to work in their given situation (like, #[q what does this 18px come from?]).
-    section#file-anatomy
-      h2 File Anatomy
-      section#css-stylesheets
-        h3 CSS Stylesheets
+    +newSection(Styleguide.PAGES.find('code.html#file-anatomy'))
+      +newSection(Styleguide.PAGES.find('code.html#css-stylesheets'), 3)
         p.
           Every main stylesheet should have the following components, in the order listed,
           at the top of the stylesheet.
@@ -499,8 +479,7 @@ block append main
           li any #[code (reference)] or #[code (inline)] Less imports
           li table of contents
           li Furthermore, any stylesheet may have any number of section or subsection headings.
-        section#repository-metadata
-          h4 Repository Metadata
+        +newSection(Styleguide.PAGES.find('code.html#repository-metadata'), 4)
           p.
             Include a comment block of information about the repository in the
             repository&rsquo;s main file. #[small #[i: code conf] is the example name of the repository.]
@@ -513,8 +492,7 @@ block append main
                 Home   : http://conf.style.asce.org/
                 Author : http://www.asce.org/
             \*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-        section#direct-css-imports
-          h4 Direct CSS Imports
+        +newSection(Styleguide.PAGES.find('code.html#direct-css-imports'), 4)
           p These are pure-CSS statements of the following form.
           figure: pre @import url('normalize.css');
           p.
@@ -527,8 +505,7 @@ block append main
             Though these imports make coding CSS easier, they are not recommended; instead,
             use #[code &lt;link rel="stylesheet" href="normalize.css"/&gt;] at the top of each
             document that links the would-be-importing stylesheet.
-        section#filename
-          h4 Filename
+        +newSection(Styleguide.PAGES.find('code.html#filename'), 4)
           p.
             Put the filename in a comment block after the meta block and any CSS imports.
             The filename for the main stylesheet has a slightly different style than that for the partials.
@@ -549,15 +526,13 @@ block append main
               /*################################*\
                   conf  |  base.less
               \*################################*/
-        section#less-imports
-          h4 Less Imports
+        +newSection(Styleguide.PAGES.find('code.html#less-imports'), 4)
           p.
             You can use #[a(href="http://lesscss.org/features/#import-directives-feature") Less imports],
             reference or inline, to import partials into a main stylesheet.
             These go after the filename comment block, because any code injected inline
             should be done so underneath.
-        section#table-contents-1
-          h4 Table of Contents
+        +newSection(Styleguide.PAGES.find('code.html#table-contents'), 4)
           p.
             There are two types of table-of-contents. The first type is used in the main stylesheet
             to describe each imported partial. The second may be used within a partial stylesheet
@@ -612,8 +587,7 @@ block append main
             // # VERTICAL GRID
             //   ## Font size and line height
             //   ## Padding, margin, border
-        section#section-and-subsection-headings
-          h4 Section and Subsection Headings
+        +newSection(Styleguide.PAGES.find('code.html#section-and-subsection-headings'), 4)
           p.
             Use inline comments to begin and end sections and subsections with headings.
             The #[abbr(title="pound signs") hashes (#[code #])] make find(-and-replace) much easier.

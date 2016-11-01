@@ -33,7 +33,7 @@ module.exports = (function () {
           .add(new Page({ name: 'CSS/Less Specifics', url: 'code.html#css-less-specifics' }))
           .add(new Page({ name: 'JS Specifics'      , url: 'code.html#js-specifics' }))
         )
-        .add(new Page({ name: 'Accessibility', url: 'code.html#accesibility' }))
+        .add(new Page({ name: 'Accessibility', url: 'code.html#accessibility' }))
         .add(new Page({ name: 'Optimization' , url: 'code.html#optimization' }))
         .add(new Page({ name: 'Commenting'   , url: 'code.html#commenting' })
           .add(new Page({ name: 'Formatting', url: 'code.html#formatting' }))

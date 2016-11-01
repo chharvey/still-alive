@@ -7,8 +7,7 @@ block append mainHeader
   p These are components of a user-interactive nature.
 
 block append main
-  section#alert-component
-    h2 The Alert Component
+  +newSection(Styleguide.PAGES.find('comp-ui.html#alert-component'))
     p.
       The Alert Component builds off the Box Object, so you must include #[code o-Box] in the class attribute.
       Subclasses of the Alert Component determine specific types of Alerts.
@@ -21,8 +20,7 @@ block append main
       p.o-Box.c-Alert.c-Alert--skss #[strong.c-Alert__Title Success &#x263a;] You have successfully completed the task as intended.       (.o-Box.c-Alert.c-Alert--skss) Use .c-Alert__Link to include a #[a.c-Alert__Link(href="") proper link].
       p.o-Box.c-Alert.c-Alert--info #[strong.c-Alert__Title Info    &#x003f;] This is some more information about a thing.                (.o-Box.c-Alert.c-Alert--info) Use .c-Alert__Link to include a #[a.c-Alert__Link(href="") proper link].
       p.o-Box.c-Alert.c-Alert--help #[strong.c-Alert__Title Help    &#x2665;] Here are some hints and tips for you. You&rsquo;re welcome. (.o-Box.c-Alert.c-Alert--help) Use .c-Alert__Link to include a #[a.c-Alert__Link(href="") proper link].
-  section#label-component
-    h2 The Label Component
+  +newSection(Styleguide.PAGES.find('comp-ui.html#label-component'))
     p.
       The Label Component builds off the Textbox Object, so include the #[code .o-Textbox] class.
       Subclasses add skins.
@@ -35,8 +33,7 @@ block append main
       p Example paragraph. #[small.o-Textbox.c-Label.c-Label--skss .o-Textbox.c-Label.c-Label--skss]
       p Example paragraph. #[small.o-Textbox.c-Label.c-Label--info .o-Textbox.c-Label.c-Label--info]
       p Example paragraph. #[small.o-Textbox.c-Label.c-Label--help .o-Textbox.c-Label.c-Label--help]
-  section#badge-component
-    h2 The Badge Component
+  +newSection(Styleguide.PAGES.find('comp-ui.html#badge-component'))
     p.
       The Badge Component builds off the Textbox Object, so include the #[code .o-Textbox] class.
       Subclasses add skins.
@@ -49,10 +46,8 @@ block append main
       p Example p with a .o-Textbox.c-Badge.c-Badge--skss. #[small.o-Textbox.c-Badge.c-Badge--skss 16]
       p Example p with a .o-Textbox.c-Badge.c-Badge--info. #[small.o-Textbox.c-Badge.c-Badge--info 256]
       p Example p with a .o-Textbox.c-Badge.c-Badge--help. #[small.o-Textbox.c-Badge.c-Badge--help 65,536]
-  section#text-level-components
-    h2 Text-Level Components
-    section#key-component
-      h3 The Key Component
+  +newSection(Styleguide.PAGES.find('comp-ui.html#text-level-components'))
+    +newSection(Styleguide.PAGES.find('comp-ui.html#key-component'), 3)
       p.
         Use #[code .o-Textbox.c-Key] to represent
         a #[span.o-Textbox.c-Key button] or #[span.o-Textbox.c-Key key]

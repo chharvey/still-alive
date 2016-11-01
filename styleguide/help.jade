@@ -6,7 +6,7 @@ block append vars
 block append mainHeader
 
 block append main
-  section#after-helpers
+  +newSection(Styleguide.PAGES.find('help.html#after-helpers'))
     h2 The After#[span.-va-st &lowast;] Helpers
     p.o-Box.c-Alert.c-Alert--help.
       #[strong.c-Alert__Title Note:]
@@ -70,8 +70,8 @@ block append main
         li.o-List__Item.h-Inline.h-AfterSquare.h-demo black hole
         li.o-List__Item.h-Inline.h-demo singularity
       pre &lt;li class="h-Inline  #[u h-AfterSquare]"&gt;spacetime&lt;/li&gt;
-  section.o-Box.o-Box--kilo.c-Document__Draft#crossgrid-lined(style="background-color: #f5d5d6;")
-    h2 crossgrid-lined
+  +newSection(Styleguide.PAGES.find('help.html#crossgrid-lined'))
+    div.o-Box.o-Box--kilo.c-Document__Draft(style="background-color: #f5d5d6;")
     figure.crossgrid-lined
       p Some figures contain text and/or paragraphs. The optional class #[code .crossgrid-lined] is added.
       p This #[code figure.crossgrid-lined] contains optional #[code p] elements.

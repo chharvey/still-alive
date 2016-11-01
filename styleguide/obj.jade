@@ -9,8 +9,7 @@ block append mainHeader
     Backgrounds have been added to all Objects on this page to show structure.
 
 block append main
-  section#box-object
-    h2 The Box Object
+  +newSection(Styleguide.PAGES.find('obj.html#box-object'))
     p.
       Use the Box object for stand-alone, highlighted blocks.
       They are useful for things like alerts, pop-ups, and asides.
@@ -46,8 +45,7 @@ block append main
         li.o-List__Item.h-demo.h-p-giga .h-p-giga
         li.o-List__Item.h-demo.h-p-tera .h-p-tera
         li.o-List__Item.h-demo.h-p-peta .h-p-peta
-  section#textbox-object
-    h2 The Textbox Object
+  +newSection(Styleguide.PAGES.find('obj.html#textbox-object'))
     p.
       The Textbox Object is similar to the Box object except that it is used for
       #[em inline text only],
@@ -63,8 +61,7 @@ block append main
       p Example paragraph #[small.o-Textbox.a-bc-shadelight Textbox]
       pre.
         &lt;h1&gt;Example h1 &lt;small class="#[u o-Textbox]"&gt;Textbox&lt;/small&gt;&lt;/h1&gt;
-  section#golden-container
-    h2 The Golden Container
+  +newSection(Styleguide.PAGES.find('obj.html#golden-container'))
     p.
       See my article #[a(href="../blog/griddemo.html") griddemo.html] for docs on
       the GoldenContainer object.
@@ -137,8 +134,7 @@ block append main
           .o-GoldenContainer__Content__SideMinor(style="color: #902929;").
             #[h1.normh1 Minor Side]
             Maecenas sapien sapien, ornare nec lobortis eget, tincidunt sed ligula.
-    section#flipped-golden-container
-      h3 The Flipped Golden Container
+    +newSection(Styleguide.PAGES.find('obj.html#flipped-golden-container'), 3)
       p The following is a #[code .o-GoldenContainerFlip] Object, containing 3 children:
       ul
         li a #[code .o-GoldenContainerFlip__Content] Object

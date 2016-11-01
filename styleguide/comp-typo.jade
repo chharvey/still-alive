@@ -7,8 +7,7 @@ block append mainHeader
   p These are components of a typographical, static nature.
 
 block append main
-  section#subhead-component
-    h2 The Subhead Component
+  +newSection(Styleguide.PAGES.find('comp-typo.html#subhead-component'))
     p.
       Put a #[code .c-Subhead] sibling adjacent to a heading to create
       a subheading for a page. This can be thought of as a
@@ -19,8 +18,7 @@ block append main
       pre.
         &lt;h1&gt;Work Hard&lt;/h1&gt;
         &lt;p class="#[u c-Subhead]"&gt;there are no shortcuts&lt;/p&gt;
-  section#folio-title-component
-    h2 The Folio Title Component
+  +newSection(Styleguide.PAGES.find('comp-typo.html#folio-title-component'))
     p.
       On special pages, the top-level header may be a #[code .c-FolioTitle]. To add a little spice,
       use #[code .c-FolioTitle__Cap] on capital letters. The size will make them stand out.
@@ -34,8 +32,7 @@ block append main
           your
           &lt;span class="#[u c-FolioTitle__Cap]"&gt;B&lt;/span&gt;ody
         &lt;/h1&gt;
-  section#lede-drop-cap-components
-    h2 The Lede and Drop&nbsp;Cap Components
+  +newSection(Styleguide.PAGES.find('comp-typo.html#lede-drop-cap-components'))
     figure
       p.c-Lede.
         A #[i lede] paragraph (also referred to as a #[i standfirst] in the
@@ -58,8 +55,7 @@ block append main
         &lt;p class="#[u c-Lede]"&gt;A lede paragraph ...&lt;/p&gt;
         &lt;p class="#[u c-Lede]  #[u c-Lede--dropcap]"&gt;Dropped capitals ...&lt;/p&gt;
         &lt;p&gt;&lt;span class="#[u c-Dropcap]"&gt;You can also&lt;/span&gt; manually ...&lt;/p&gt;
-  section#caption-component
-    h2 The Caption Component
+  +newSection(Styleguide.PAGES.find('comp-typo.html#caption-component'))
     p.
       The Caption Component may be used on a table caption, a figure caption,
       a details summary element, a fieldset legend element,
@@ -109,8 +105,7 @@ block append main
             This invitation ...
           &lt;/figcaption&gt;
         &lt;/figure&gt;
-  section#pull-quote-component
-    h2 The Pull&nbsp;Quote Component
+  +newSection(Styleguide.PAGES.find('comp-typo.html#pull-quote-component'))
     p.
       A pull quote has a stronger effect than unstyled text, even if it does belong
       in a #[code blockquote] element.
@@ -129,8 +124,7 @@ block append main
           Look at you, soaring through the air ...
           &lt;cite class="#[u c-Pullquote__Src]"&gt;GLaDOS&lt;/cite&gt;
         &lt;/blockquote&gt;
-  section#action-list-component
-    h2 The Action&nbsp;List Component
+  +newSection(Styleguide.PAGES.find('comp-typo.html#action-list-component'))
     p Action lists are used specifically for short, one-line, textual hyperlinks.
     figure
       ul.c-ListAction
@@ -143,8 +137,7 @@ block append main
           &lt;li class="#[u c-ListAction__Item]"&gt;&lt;a&gt; anchored &lt;/a&gt;&lt;/li&gt;
           &lt;li class="#[u c-ListAction__Item]"&gt;&lt;a href=""&gt; linked &lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
-  section#footnotes-list-component
-    h2 The Footnotes&nbsp;List Component
+  +newSection(Styleguide.PAGES.find('comp-typo.html#footnotes-list-component'))
     p.
       If you have footnotes
       in the #[code footer] of a document or section, use a Footnotes List Component.
@@ -179,10 +172,9 @@ block append main
             &lt;li&gt;&lt;sup&gt;&lt;a&gt;3&lt;/a&gt;&lt;/sup&gt;An empty footnote ...&lt;/li&gt;
           &lt;/ul&gt;
         &lt;/footer&gt;
-  section.a-bc-aperturewhite#components-for-tables
-    h2 Components for Tables
+  +newSection(Styleguide.PAGES.find('comp-typo.html#components-for-tables'))
     p Use the following classes for extra styles on #[code table] and #[code dl] elements.
-    form
+    form.a-bc-aperturewhite
       fieldset(style="margin-bottom:1.5rem;")
         dl.o-Grid.-mb-0
           dt.o-Grid__Item.a-w-p2
@@ -259,8 +251,7 @@ block append main
         dd.o-Grid__Item.o-Box.a-w-p3  .a-w-p3  (&asymp; 23.607%)
         dt.o-Grid__Item.o-Box.a-w-p4c .a-w-p4c (&asymp; 85.410%)
         dd.o-Grid__Item.o-Box.a-w-p4  .a-w-p4  (&asymp; 14.590%)
-  section#document-component
-    h2 The Document Component
+  +newSection(Styleguide.PAGES.find('comp-typo.html#document-component'))
     p.
       Use #[code .c-Document] to mark up a document such as an article or blog post.
       A #[dfn#dfn-document document] may take the form of a #[code body &gt; main] or
@@ -288,8 +279,7 @@ block append main
           &lt;p class="#[u c-Document__Released]"&gt;Aenean consectetur suscipit urna.&lt;/p&gt;
           &lt;p class="#[u c-Document__Informative]"&gt;Donec finibus ut lectus finibus pellentesque.&lt;/p&gt;
         &lt;/article&gt;
-    section#document-meta(style="opacity: 0.3;")
-      h3 Document Meta
+    +newSection(Styleguide.PAGES.find('comp-typo.html#document-meta'), 3)
       p #[code .c-Document__Meta] marks up meta-information about a document.
       p.
         Read
@@ -318,10 +308,8 @@ block append main
         dd.update
           time(datetime="2014-05-08 14:53") May 8, 2013 #[span.tod 2:53 PM]
           span.o-Textbox.c-Label.c-Label--dang.-ml-1 Latest
-  section#text-level-components
-    h2 Text-Level Components
-    section#acronyms
-      h3 Acronyms
+  +newSection(Styleguide.PAGES.find('comp-typo.html#text-level-components'))
+    +newSection(Styleguide.PAGES.find('comp-typo.html#acronyms'), 3)
       p.
         When an #[code abbr] element contains an acronym, with all caps,
         use class #[code .c-Acro] for a friendlier style.
@@ -342,8 +330,7 @@ block append main
           strongly advocates a mission to Mars.
         pre.
           &lt;p&gt;&lt;abbr class="#[u c-Acro]" title="National Aeronautics and Space Administration"&gt;&lt;span class="#[u c-Acro__First]"&gt;N&lt;/span&gt;ASA&lt;/abbr&gt; strongly ...&lt;/p&gt;
-    section#camo-links
-      h3 Camo Links
+    +newSection(Styleguide.PAGES.find('comp-typo.html#camo-links'), 3)
       figure
         p.
           A #[code .c-Camo] is a #[a.c-Camo(href="") camouflaged hyperlink].
@@ -355,8 +342,7 @@ block append main
             ... is a &lt;a class="#[u c-Camo]" href=""&gt;camouflaged hyperlink&lt;/a&gt;. ...
             ... works on &lt;a class="#[u c-Camo]"&gt;anchors without hrefs&lt;/a&gt;. ...
           &lt;/p&gt;
-  section#breadcrumbs(style="opacity: 0.3;")
-    h2 Breadcrumbs
+  +newSection(Styleguide.PAGES.find('comp-typo.html#breadcrumbs'))
     p.
       Read
       #[a(rel="external" href="https://github.com/chharvey/chharvey.github.io/wiki/Breadcrumbs") my technical report on breadcrumbs]

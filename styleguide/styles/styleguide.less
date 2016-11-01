@@ -116,4 +116,16 @@ body {
   display: block;
   font-weight:bold;
 }
+.docs-_fragid {
+  margin-left: 1rem;
+  font-weight: 100;
+  &::before {
+    content: '';
+  }
+}
+h1, h2, h3, h4, h5, h6 {
+  &:hover > .docs-_fragid::before {
+    content: '\00a7'; // §
+  }
+}
 //++++ #end OVERRIDES ++++//
