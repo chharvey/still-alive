@@ -1,1 +1,1 @@
-module.exports = require('./styleguide/_models/classes/Styleguide.class.js')
+module.exports = require('./docs/_models/classes/Docs.class.js')
