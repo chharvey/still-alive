@@ -8,6 +8,7 @@
     "pug:docs": "pug -O docs/_models/options.js docs/{phi,code,visual,base,obj,comp-typo,comp-ui,help,atom}.jade",
     "lessc:docs": "lessc  docs/styles/docs.less  docs/styles/docs.css",
     "lessc:core": "lessc  still-alive.less  still-alive.css",
+    "build": "npm run pug:docs  &&  npm run lessc:docs  &&  npm run lessc:core",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
