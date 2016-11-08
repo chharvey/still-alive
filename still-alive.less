@@ -1,0 +1,114 @@
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*\
+    still-alive
+    Version: 1.0.0
+    Licence: MIT
+    Repo   : https://github.com/chharvey/still-alive.git
+    Home   : https://github.com/chharvey/still-alive#readme
+    Author : Chris Harvey <chrisharvey2pi@gmail.com> (https://chharvey.github.io/)
+\*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+@import (css) url('https://cdn.rawgit.com/chharvey/xmeter/v5.2.0/xmeter.css');
+@import (css) url('https://cdn.rawgit.com/chharvey/bangs/v0.9.0/bangs.css');
+@import (css) url('https://cdn.rawgit.com/chharvey/lux-nox/v1.2.0/lux-nox.css');
+
+
+/*================================*\
+    still-alive.less
+\*================================*/
+
+
+/*
+ * # CONTENTS
+ *
+ * dev.css........................development mode: fixes for imported stylesheets
+ *
+ * ## BASE
+ * base...........................unclassed html elements
+ *
+ * ## OBJECTS
+ * Box............................[description]
+ * Textbox........................[description]
+ * GoldenContainer................[description]
+ *
+ * ## COMPONENTS
+ * ### TYPOGRAPHIC
+ * #### BLOCK-LEVEL
+ * Document.......................[description]
+ * Subhead........................[description]
+ * FolioTitle.....................[description]
+ * Lede...........................[description]
+ * Caption........................[description]
+ * Pullquote......................[description]
+ * ListAction.....................[description]
+ * ListFootnotes..................[description]
+ * Table..........................[description]
+ * #### TEXT-LEVEL
+ * Acro...........................[description]
+ * Camo...........................camouflaged hyperlinks
+ *
+ * ### UI (USER INTERACTION)
+ * Alert..........................[description]
+ * Label..........................[description]
+ * Badge..........................[description]
+ * Key............................[description]
+ * breadcrumbs....................[description]
+ * IconButton.....................[description]
+ *
+ * ## OVERRIDES
+ * helpers.css....................context-agnostic helper classes
+ *
+ * ## ATOMS
+ * width...........................[description]
+ * padding.........................[description]
+ * font-size.......................[description]
+ * font-family.....................[description]
+ * background-color................[description]
+ *
+ * shame.css......................hacks and styles I haven’t figured out where to put yet
+ */
+
+///////////////////////////////////////////////////////////////////////////////
+
+
+@import url('styles/_dev.less');
+
+@import url('styles/_base.less');
+
+@import url('styles/_obj.Box.less');
+@import url('styles/_obj.Textbox.less');
+@import url('styles/_obj.GoldenContainer.less');
+// @import url('styles/_object.media.less');
+
+@import url('styles/_comp.typo.Document.less');
+@import url('styles/_comp.typo.Subhead.less');
+@import url('styles/_comp.typo.FolioTitle.less');
+@import url('styles/_comp.typo.Lede.less');
+@import url('styles/_comp.typo.Caption.less');
+@import url('styles/_comp.typo.Pullquote.less');
+@import url('styles/_comp.typo.ListAction.less');
+@import url('styles/_comp.typo.ListFootnotes.less');
+@import url('styles/_comp.typo.Table.less');
+@import url('styles/_comp.typo.FigImg.less');
+
+@import url('styles/_comp.typo.Acro.less');
+@import url('styles/_comp.typo.Camo.less');
+
+@import url('styles/_comp.ui.Alert.less');
+@import url('styles/_comp.ui.Label.less');
+@import url('styles/_comp.ui.Badge.less');
+// @import url('styles/_comp.ui.Tag.less');
+@import url('styles/_comp.ui.Key.less');
+@import url('styles/_component.breadcrumbs.less');
+@import url('styles/_comp.ui.IconButton.less');
+// @import url('styles/_component.masthead.less');
+
+@import url('styles/_helpers.less');
+@import url('styles/_atom.width.less');
+@import url('styles/_atom.padding.less');
+@import url('styles/_atom.font-size.less');
+@import url('styles/_atom.font-family.less');
+@import url('styles/_atom.list-style-type.less');
+@import url('styles/_atom.background-color.less');
+@import url('styles/_shame.less');
