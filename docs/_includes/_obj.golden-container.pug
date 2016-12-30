@@ -1,0 +1,142 @@
+p.
+  See my article #[a(href="../blog/griddemo.html") griddemo.html] for docs on
+  the GoldenContainer object.
+p The following is a #[code .o-GoldenContainer] Object, containing 3 children:
+ol
+  li a #[code .o-GoldenContainer__Content] Object
+  li a #[code .o-GoldenContainer__Sidebar.o-GoldenContainer__Sidebar--major] Object
+  li a #[code .o-GoldenContainer__Sidebar.o-GoldenContainer__Sidebar--minor] Object
+figure
+  .o-GoldenContainer.h-demo(style="margin-bottom:18rem;")
+    .o-GoldenContainer__Content.h-demo.
+      #[h1.normh1 Content]
+      Suspendisse ut auctor enim.
+      Aliquam viverra enim vitae ante aliquet venenatis.
+      Sed vel nibh sit amet sapien fermentum mattis nec non arcu.
+      Praesent dapibus velit quis lectus tempus, ut ullamcorper nibh facilisis.
+      Aenean tincidunt ante risus, semper malesuada libero consectetur id.
+      Praesent vel ligula ut enim porttitor porta. Aenean eu ullamcorper mi.
+      Integer blandit est quam, eget mattis urna scelerisque quis.
+      Maecenas sapien sapien, ornare nec lobortis eget, tincidunt sed ligula.
+      Maecenas risus nibh, volutpat sed euismod non, semper eget neque.
+      Integer varius egestas risus, volutpat sagittis turpis convallis eget.
+      Vivamus pulvinar ligula eget mi tincidunt, eget faucibus justo laoreet.
+      In sapien lacus, egestas faucibus laoreet eu, tempor sit amet lorem.
+      Sed luctus congue tortor a scelerisque.
+    .o-GoldenContainer__Sidebar.o-GoldenContainer__Sidebar--major.h-demo(style="color: #1560AB;").
+      #[h1.normh1 Major Sidebar]
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Aliquam sagittis suscipit nunc, a cursus libero euismod at.
+      Nulla placerat neque massa, quis interdum leo efficitur vel.
+      Donec feugiat varius arcu non volutpat.
+      Mauris eget mauris ut mauris auctor mattis id vel justo.
+      Nulla dictum arcu nec suscipit mollis.
+      Maecenas a iaculis nisl, ut pretium est. Nulla facilisi.
+    .o-GoldenContainer__Sidebar.o-GoldenContainer__Sidebar--minor.h-demo(style="color: #902929;").
+      #[h1.normh1 Minor Sidebar]
+      Donec finibus ut lectus finibus pellentesque.
+      Nulla euismod feugiat nulla nec posuere.
+      Sed ac est id sem sagittis rhoncus eu ac neque.
+      Aliquam eu metus sagittis, porta turpis id, scelerisque magna.
+p.
+  Sometimes you may have objects #[em inside] the Content that you wish to make
+  appear as a sidebar or as if it weren&rsquo;t in the Content.
+p.
+  The following #[code .o-GoldenContainer] Object contains only a
+  #[code .o-GoldenContainer__Content] Object, which contains 3 children:
+ol
+  li a #[code .o-GoldenContainer__Content__Page] Object
+  li a #[code .o-GoldenContainer__Content__SideMajor] Object
+  li a #[code .o-GoldenContainer__Content__SideMinor] Object
+p.
+  Even though these are children of #[code .o-GoldenContainer__Content], they appear
+  as if they are outside (for example, inside a #[code __Sidebar--major] or
+  #[code __Sidebar--minor]).
+figure
+  .o-GoldenContainer.h-demo(style="margin-bottom:18rem;")
+    .o-GoldenContainer__Content.h-demo
+      h1.normh1 Content
+      | Suspendisse ut auctor enim.
+      | Aliquam viverra enim vitae ante aliquet venenatis.
+      .o-GoldenContainer__Content__Page.
+        #[h1.normh1 Page]
+        Sed vel nibh sit amet sapien fermentum mattis nec non arcu.
+        Praesent dapibus velit quis lectus tempus, ut ullamcorper nibh facilisis.
+        Aenean tincidunt ante risus, semper malesuada libero consectetur id.
+      .o-GoldenContainer__Content__SideMajor(style="color: #1560AB;").
+        #[h1.normh1 Major Side]
+        Praesent vel ligula ut enim porttitor porta. Aenean eu ullamcorper mi.
+        Integer blandit est quam, eget mattis urna scelerisque quis.
+      .o-GoldenContainer__Content__SideMinor(style="color: #902929;").
+        #[h1.normh1 Minor Side]
+        Maecenas sapien sapien, ornare nec lobortis eget, tincidunt sed ligula.
++newSection(Docs.DOCS.find('obj.html#flipped-golden-container'), 3)
+  p The following is a #[code .o-GoldenContainerFlip] Object, containing 3 children:
+  ul
+    li a #[code .o-GoldenContainerFlip__Content] Object
+    li a #[code .o-GoldenContainerFlip__Sidebar.o-GoldenContainerFlip__Sidebar--major] Object
+    li a #[code .o-GoldenContainerFlip__Sidebar.o-GoldenContainerFlip__Sidebar--minor] Object
+  figure
+    .o-GoldenContainerFlip.h-demo(style="margin-bottom:18rem;")
+      .o-GoldenContainerFlip__Content.h-demo.
+        #[h1.normh1 Content]
+        Suspendisse ut auctor enim.
+        Aliquam viverra enim vitae ante aliquet venenatis.
+        Sed vel nibh sit amet sapien fermentum mattis nec non arcu.
+        Praesent dapibus velit quis lectus tempus, ut ullamcorper nibh facilisis.
+        Aenean tincidunt ante risus, semper malesuada libero consectetur id.
+        Praesent vel ligula ut enim porttitor porta. Aenean eu ullamcorper mi.
+        Integer blandit est quam, eget mattis urna scelerisque quis.
+        Maecenas sapien sapien, ornare nec lobortis eget, tincidunt sed ligula.
+        Maecenas risus nibh, volutpat sed euismod non, semper eget neque.
+        Integer varius egestas risus, volutpat sagittis turpis convallis eget.
+        Vivamus pulvinar ligula eget mi tincidunt, eget faucibus justo laoreet.
+        In sapien lacus, egestas faucibus laoreet eu, tempor sit amet lorem.
+        Sed luctus congue tortor a scelerisque.
+      .o-GoldenContainerFlip__Sidebar.o-GoldenContainerFlip__Sidebar--major.h-demo(style="color: #1560AB;").
+        #[h1.normh1 Major Sidebar]
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Aliquam sagittis suscipit nunc, a cursus libero euismod at.
+        Nulla placerat neque massa, quis interdum leo efficitur vel.
+        Donec feugiat varius arcu non volutpat.
+        Mauris eget mauris ut mauris auctor mattis id vel justo.
+        Nulla dictum arcu nec suscipit mollis.
+        Maecenas a iaculis nisl, ut pretium est. Nulla facilisi.
+      .o-GoldenContainerFlip__Sidebar.o-GoldenContainerFlip__Sidebar--minor.h-demo(style="color: #902929;").
+        #[h1.normh1 Minor Sidebar]
+        Donec finibus ut lectus finibus pellentesque.
+        Nulla euismod feugiat nulla nec posuere.
+        Sed ac est id sem sagittis rhoncus eu ac neque.
+        Aliquam eu metus sagittis, porta turpis id, scelerisque magna.
+  p.
+    Sometimes you may have objects #[em inside] the Content that you wish to make
+    appear as a sidebar or as if it weren&rsquo;t in the Content.
+  p.
+    The following #[code .o-GoldenContainerFlip] Object contains only a
+    #[code .o-GoldenContainerFlip__Content] Object, which contains 3 children:
+  ol
+    li a #[code .o-GoldenContainerFlip__Content__Page] Object
+    li a #[code .o-GoldenContainerFlip__Content__SideMajor] Object
+    li a #[code .o-GoldenContainerFlip__Content__SideMinor] Object
+  p.
+    Even though these are children of #[code .o-GoldenContainerFlip__Content], they appear
+    as if they are outside (for example, inside a #[code __Sidebar--major] or
+    #[code __Sidebar--minor]).
+  figure
+    .o-GoldenContainerFlip.h-demo(style="margin-bottom:18rem;")
+      .o-GoldenContainerFlip__Content.h-demo
+        h1.normh1 Content
+        | Suspendisse ut auctor enim.
+        | Aliquam viverra enim vitae ante aliquet venenatis.
+        .o-GoldenContainerFlip__Content__Page.
+          #[h1.normh1 Page]
+          Sed vel nibh sit amet sapien fermentum mattis nec non arcu.
+          Praesent dapibus velit quis lectus tempus, ut ullamcorper nibh facilisis.
+          Aenean tincidunt ante risus, semper malesuada libero consectetur id.
+        .o-GoldenContainerFlip__Content__SideMajor(style="color: #1560AB;").
+          #[h1.normh1 Major Side]
+          Praesent vel ligula ut enim porttitor porta. Aenean eu ullamcorper mi.
+          Integer blandit est quam, eget mattis urna scelerisque quis.
+        .o-GoldenContainerFlip__Content__SideMinor(style="color: #902929;").
+          #[h1.normh1 Minor Side]
+          Maecenas sapien sapien, ornare nec lobortis eget, tincidunt sed ligula.

@@ -1,0 +1,49 @@
+p.
+  The Caption Component may be used on a table caption, a figure caption,
+  a details summary element, a fieldset legend element,
+  or simply just a paragraph describing an arbitrary element.
+p.
+  Subclasses #[code .c-Caption--before] and #[code .c-Caption--after] add a separating border.
+  They&rsquo;re really only good for when the figure contains text (as opposed to a table or image)
+  and the caption text needs to be separated.
+  The subcomponent #[code .c-Caption__Title] serves as a label.
+figure
+  figure
+    img(style="display: block; width: 50%; min-height: 48px; margin: auto;" src="" alt="wedding invitation — concord")
+    figcaption.c-Caption
+      strong.c-Caption__Title Figure 1.
+      | Lots of folks play it safe with their wedding invitations by using the principle of concord.
+  pre.
+    &lt;figure&gt;
+      &lt;img alt="wedding invitation — concord"/&gt;
+      &lt;figcaption class="#[u c-Caption]"&gt;
+        &lt;strong class="#[u c-Caption__Title]"&gt;Figure 1.&lt;/strong&gt;
+        Lots of folks ...
+      &lt;/figcaption&gt;
+    &lt;/figure&gt;
+  figure
+    figcaption.c-Caption.c-Caption--before
+      strong.c-Caption__Title Figure 2.
+      | The image below shows how similar (but not the same) elements create conflict.
+    img(style="display: block; width: 50%; min-height: 48px; margin: auto;" src="" alt="wedding invitation — conflict")
+  pre.
+    &lt;figure&gt;
+      &lt;figcaption class="#[u c-Caption]  #[u c-Caption--before]"&gt;
+        &lt;strong class="c-Caption__Title"&gt;Figure 2.&lt;/strong&gt;
+        The image below ...
+      &lt;/figcaption&gt;
+      &lt;img alt="wedding invitation — conflict"/&gt;
+    &lt;/figure&gt;
+  figure
+    img(style="display: block; width: 50%; min-height: 48px; margin: auto;" src="" alt="wedding invitation — contrast")
+    figcaption.c-Caption.c-Caption--after
+      strong.c-Caption__Title Figure 3.
+      | This invitation uses very different elements to create a healthy contrast.
+  pre.
+    &lt;figure&gt;
+      &lt;img alt="wedding invitation — contrast"/&gt;
+      &lt;figcaption class="#[u c-Caption]  #[u c-Caption--after]"&gt;
+        &lt;strong class="c-Caption__Title"&gt;Figure 3.&lt;/strong&gt;
+        This invitation ...
+      &lt;/figcaption&gt;
+    &lt;/figure&gt;
