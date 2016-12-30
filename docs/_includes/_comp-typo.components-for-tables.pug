@@ -1,0 +1,78 @@
+p Use the following classes for extra styles on #[code table] and #[code dl] elements.
+form.a-bc-aperturewhite
+  fieldset(style="margin-bottom:1.5rem;")
+    dl.o-Grid.-mb-0
+      dt.o-Grid__Item.a-w-p2
+        label
+          input(type="checkbox" name="tb" value="c-TableBordered")#check-tb
+          code .c-TableBordered
+      dd.o-Grid__Item.a-w-p2c border around the entire table
+      dt.o-Grid__Item.a-w-p2
+        label
+          input(type="checkbox" name="tbr" value="c-TableBorderedRows")#check-tbr
+          code .c-TableBorderedRows
+      dd.o-Grid__Item.a-w-p2c borders in between rows
+      dt.o-Grid__Item.a-w-p2
+        label
+          input(type="checkbox" name="tbc" value="c-TableBorderedCols")#check-tbc
+          code .c-TableBorderedCols
+      dd.o-Grid__Item.a-w-p2c borders in between cells in rows
+      dt.o-Grid__Item.a-w-p2
+        label
+          input(type="checkbox" name="ts" value="c-TableShaded")#check-ts
+          code .c-TableShaded
+      dd.o-Grid__Item.a-w-p2c background shading to the entire table
+      dt.o-Grid__Item.a-w-p2
+        label
+          input(type="checkbox" name="tsr" value="c-TableShadedRows")#check-tsr
+          code .c-TableShadedRows
+      dd.o-Grid__Item.a-w-p2c background shading to alternating rows
+      dt.o-Grid__Item.a-w-p2
+        label
+          input(type="checkbox" name="tsc" value="c-TableShadedCols")#check-tsc
+          code .c-TableShadedCols
+      dd.o-Grid__Item.a-w-p2c background shading to alternating cells in rows
+      dt.o-Grid__Item.a-w-p2
+        label
+          input(type="checkbox" name="th" value="c-TableHover")#check-th
+          code .c-TableHover
+      dd.o-Grid__Item.a-w-p2c background shading to a row on hover
+  input#reset-tables(type="reset")
+p.o-Box.c-Alert.c-Alert--info.
+  #[strong.c-Alert__Title Notice:]
+  These Components are all independent of each other, that is, the use of one does not require
+  another. For example, a table may be classed #[code .c-TableBorderedRows] but may not
+  necessarily be classed #[code .c-TableBordered].
+figure
+  table#tabledemo1
+    thead
+      tr #[th thead tr 1 th 1] #[th thead tr 1 th 2] #[th thead tr 1 th 3] #[th thead tr 1 th 4] #[th thead tr 1 th 5]
+      tr #[td thead tr 2 td 1] #[td thead tr 2 td 2] #[td thead tr 2 td 3] #[td thead tr 2 td 4] #[td thead tr 2 td 5]
+      tr #[td thead tr 3 td 1] #[td thead tr 3 td 2] #[td thead tr 3 td 3] #[td thead tr 3 td 4] #[td thead tr 3 td 5]
+      tr #[td thead tr 4 td 1] #[td thead tr 4 td 2] #[td thead tr 4 td 3] #[td thead tr 4 td 4] #[td thead tr 4 td 5]
+      tr #[td thead tr 5 td 1] #[td thead tr 5 td 2] #[td thead tr 5 td 3] #[td thead tr 5 td 4] #[td thead tr 5 td 5]
+    tfoot
+      tr #[th tfoot tr 1 th 1] #[th tfoot tr 1 th 2] #[th tfoot tr 1 th 3] #[th tfoot tr 1 th 4] #[th tfoot tr 1 th 5]
+      tr #[td tfoot tr 2 td 1] #[td tfoot tr 2 td 2] #[td tfoot tr 2 td 3] #[td tfoot tr 2 td 4] #[td tfoot tr 2 td 5]
+      tr #[td tbody tr 3 td 1] #[td tbody tr 3 td 2] #[td tfoot tr 3 td 3] #[td tfoot tr 3 td 4] #[td tfoot tr 3 td 5]
+      tr #[td tbody tr 4 td 1] #[td tbody tr 4 td 2] #[td tfoot tr 4 td 3] #[td tfoot tr 4 td 4] #[td tfoot tr 4 td 5]
+      tr #[td tbody tr 5 td 1] #[td tbody tr 5 td 2] #[td tfoot tr 5 td 3] #[td tfoot tr 5 td 4] #[td tfoot tr 5 td 5]
+    tbody
+      tr #[td tbody tr 1 td 1] #[td tbody tr 1 td 2] #[td tbody tr 1 td 3] #[td tbody tr 1 td 4] #[td tbody tr 1 td 5]
+      tr #[td tbody tr 2 td 1] #[td tbody tr 2 td 2] #[td tbody tr 2 td 3] #[td tbody tr 2 td 4] #[td tbody tr 2 td 5]
+      tr #[td tfoot tr 3 td 1] #[td tfoot tr 3 td 2] #[td tbody tr 3 td 3] #[td tbody tr 3 td 4] #[td tbody tr 3 td 5]
+      tr #[td tfoot tr 4 td 1] #[td tfoot tr 4 td 2] #[td tbody tr 4 td 3] #[td tbody tr 4 td 4] #[td tbody tr 4 td 5]
+      tr #[td tfoot tr 5 td 1] #[td tfoot tr 5 td 2] #[td tbody tr 5 td 3] #[td tbody tr 5 td 4] #[td tbody tr 5 td 5]
+  dl.o-Grid#tabledemo2
+    dt.o-Grid__Item.o-Box.a-w-p4  .a-w-p4  (&asymp; 14.590%)
+    dd.o-Grid__Item.o-Box.a-w-p4c .a-w-p4c (&asymp; 85.410%)
+    dt.o-Grid__Item.o-Box.a-w-p3  .a-w-p3  (&asymp; 23.607%)
+    dd.o-Grid__Item.o-Box.a-w-p3c .a-w-p3c (&asymp; 76.393%)
+    dt.o-Grid__Item.o-Box.a-w-p1c .a-w-p1c (&asymp; 38.197%)
+    dd.o-Grid__Item.o-Box.a-w-p1  .a-w-p1  (&asymp; 61.803%)
+    dt.o-Grid__Item.o-Box.a-w-p1  .a-w-p1  (&asymp; 61.803%)
+    dd.o-Grid__Item.o-Box.a-w-p1c .a-w-p1c (&asymp; 38.197%)
+    dt.o-Grid__Item.o-Box.a-w-p3c .a-w-p3c (&asymp; 76.393%)
+    dd.o-Grid__Item.o-Box.a-w-p3  .a-w-p3  (&asymp; 23.607%)
+    dt.o-Grid__Item.o-Box.a-w-p4c .a-w-p4c (&asymp; 85.410%)
+    dd.o-Grid__Item.o-Box.a-w-p4  .a-w-p4  (&asymp; 14.590%)
