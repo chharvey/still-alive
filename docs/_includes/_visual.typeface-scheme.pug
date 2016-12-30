@@ -1,0 +1,88 @@
+mixin fontBox(typeface, has_footer)
+  section.o-Grid
+    mixin description()
+      p Sample description.
+    mixin footer()
+      footer Sample footer.
+    block
+    h3.o-Grid__Item.-w-1o1= typeface.name
+    div.o-Grid__Item.a-w-p1
+      if (typeface.similar && typeface.similar[0])
+        p
+          | Similar:#{' '}
+          //- b= typeface.similar.join(', ')
+          each name,index in typeface.similar
+            b= name
+            = ((index < typeface.similar.length-1) ? ', ' : '')
+      +description()
+    div.o-Grid__Item.a-w-p2
+      figure.c-FontSamp(class=typeface.class)
+        div.c-FontSamp__Letter Aa
+        p.c-FontSamp__Sentence= typeface.sample
+      form.c-FontForm
+        label.-d-bk
+          input(type="checkbox" name="fs" value="italic")
+          |  italic
+        label.-d-bk
+          input(type="checkbox" name="fv" value="small-caps")
+          |  small-caps
+        label.-d-bk
+          input(type="range" name="fw" min="100" max="900" step="100" value="400")
+          input(type="text" value="400 (normal)" disabled="")
+        input.-d-bk(type="reset")
+    if has_footer
+      +footer()
++fontBox(Docs.FONT_SCHEME.base)
+  mixin description()
+    p.
+      Used for the main body copy, Avenir Next
+      is a sans-serif type with little to no thick/thin transition.
+      Being a sans-serif, its #[i italic] is actually an oblique, which just slants the glyphs.
++fontBox(Docs.FONT_SCHEME.heading)
+  mixin description()
+    p.
+      Optima is used only for headings of body copy
+      (not table headings, #[+etc()]).
+      It is a sans-serif polyweight type with a moderate thick/thin transition.
+      Because of this, it goes well with both monoweight types and serif types, which
+      makes it perfect for headings.
++fontBox(Docs.FONT_SCHEME.prose, true)
+  mixin description()
+    p.
+      Baskerville is used for text in formal documents and articles.
+      It is a serif oldstyle type, which is easy on the eyes and can be read at extensive length.
+      Like the #[i heading] font family, it, too, has a moderate thick/thin transition, but has diagonal stress and
+      serifs, and true italics, which means it uses a whole new set of glyphs.
+      #[sup: a.Rf#rf-baskerville(rel="this" href="#fn-baskerville") 1]
+  mixin footer()
+    footer.o-Grid__Item.-w-1o1
+      ul.c-ListFootnotes
+        li.
+          #[sup: a.Fn#fn-baskerville(rel="this" href="#rf-baskerville") 1]
+          #[b Baskerville], though considered an #[b oldstyle] type, actually has
+          a straight, vertical stress, which is typically a feature of #[b modern] types.
+          However #[b Palatino] and #[b Cochin] indeed have diagonal stresses.
++fontBox(Docs.FONT_SCHEME.accent)
+  mixin description()
+    p.
+      Helvetica Neue is used for typographical and #[abbr(title="user interface") UI]
+      components such as ledes, pull quotes, captions, alerts, labels, buttons, and keys.
+      Like #[b Avenir], it is a monoweight sans-serif, yet slightly heavier.
++fontBox(Docs.FONT_SCHEME.code)
+  mixin description()
+    p.
+      Menlo is a monospace type used for sample code on the site. Personally, I dislike
+      monospace fonts with serifs, so I chose a sans-serif.
++fontBox(Docs.FONT_SCHEME.math)
+  mixin description()
+    p.
+      Didot is a serif modern type use for mathematical spans and spans in foreign
+      languages. It has a radical thick/thin transition, vertical stress, and
+      straight horizontal serifs. With a cold yet elegant look, this font family makes
+      long spans of text hard to read, but that&rsquo;s okay because this font is
+      used only for short expressions.
++fontBox(Docs.FONT_SCHEME.script)
+  mixin description()
+    p.
+      Zapfino is used for very fancy elements such as drop-caps and subheadings.
+      Use this font family sparingly.
