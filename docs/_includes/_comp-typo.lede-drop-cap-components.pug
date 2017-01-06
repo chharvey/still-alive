@@ -1,0 +1,22 @@
+figure
+  p.c-Lede.
+    A #[i lede] paragraph (also referred to as a #[i standfirst] in the
+    #[abbr.c-Acro(title="United Kingdom") UK]) serves as the introduction
+    of an article or blog post. Use #[code .c-Lede] to achieve this style.
+    It stands out from the article text in many ways. First, it uses a sans-serif
+    typeface, as opposed to the normal serif typeface of the article. Second, it
+    uses the main heading color. Lastly, it may use an optional dropcap.
+  p.c-Lede.c-Lede--dropcap.
+    Dropped capitals (#[i drop caps]) can be used for pure aesthetics
+    in the lede paragraph. Add subclass #[code .c-Lede--dropcap] to the entire paragraph;
+    it automatically styles the #[code ::first-letter].
+    Notice how the drop cap typeface complements the lede paragraph typeface.
+  p.
+    #[span.c-Dropcap You can also]
+    manually use #[code .c-Dropcap] on
+    the first few characters of an element to provide the drop cap effect.
+    It need not be related to the Lede Component.
+  pre.
+    &lt;p class="#[u c-Lede]"&gt;A lede paragraph ...&lt;/p&gt;
+    &lt;p class="#[u c-Lede]  #[u c-Lede--dropcap]"&gt;Dropped capitals ...&lt;/p&gt;
+    &lt;p&gt;&lt;span class="#[u c-Dropcap]"&gt;You can also&lt;/span&gt; manually ...&lt;/p&gt;

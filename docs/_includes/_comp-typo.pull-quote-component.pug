@@ -1,0 +1,18 @@
+p.
+  A pull quote has a stronger effect than unstyled text, even if it does belong
+  in a #[code blockquote] element.
+  To cite the source, add a child #[code .c-Pullquote__Src] Component.
+p.
+  Use this Component when the original source text is less than 40 words and contains
+  no paragraph breaks. Do not include child #[code p] elements.
+  If the original source is long enough and/or has paragraph breaks, you shouldn&rsquo;t be
+  using this large component.
+figure
+  blockquote.c-Pullquote(cite="http://www.imdb.com/title/tt1648163/quotes").
+    Look at you, soaring through the air like an eagle&hellip; piloting a blimp.
+    #[cite.c-Pullquote__Src: abbr(title="Genetic Lifeform and Disk Operating System") GLaDOS]
+  pre.
+    &lt;blockquote class="#[u c-Pullquote]" cite="..."&gt;
+      Look at you, soaring through the air ...
+      &lt;cite class="#[u c-Pullquote__Src]"&gt;GLaDOS&lt;/cite&gt;
+    &lt;/blockquote&gt;

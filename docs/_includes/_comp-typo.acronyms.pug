@@ -1,0 +1,20 @@
+p.
+  When an #[code abbr] element contains an acronym, with all caps,
+  use class #[code .c-Acro] for a friendlier style.
+  It lessens the harshness of sequential capital letters.
+figure
+  p.
+    The National Aeronautics and Space Administration, more commonly known as
+    #[abbr.c-Acro(title="National Aeronautics and Space Administration") NASA],
+    advocates a mission to Mars.
+  pre.
+    &lt;p&gt;... known as &lt;abbr class="#[u c-Acro]" title="National Aeronautics and Space Administration"&gt;NASA&lt;/abbr&gt;, advocates ...&lt;/p&gt;
+p.
+  Use #[code .c-Acro__First] on the first letter of an #[code .c-Acro] that begins a paragraph,
+  sentence, or list item. It simply reverts the font size.
+figure
+  p.
+    #[abbr.c-Acro(title="National Aeronautics and Space Administration") #[span.c-Acro__First N]ASA]
+    strongly advocates a mission to Mars.
+  pre.
+    &lt;p&gt;&lt;abbr class="#[u c-Acro]" title="National Aeronautics and Space Administration"&gt;&lt;span class="#[u c-Acro__First]"&gt;N&lt;/span&gt;ASA&lt;/abbr&gt; strongly ...&lt;/p&gt;
