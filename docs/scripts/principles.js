@@ -1,3 +1,5 @@
+var Color = require('csscolor').Color
+
 function fontdemo(self) {
   return $(self).closest('.o-Grid').find('.c-FontSamp')
 }
@@ -20,13 +22,12 @@ $('.c-FontForm input[type="reset"]').click(function () {
 function showMix(hexvalue) {
   return function () {
     var bg_color = hexvalue || $(this).parents('.js-colorbox').find('.js-rowbc-swatch').attr('value') || '#000000'
-    bg_color = Color.newColorHexString(bg_color)
     var overlap = {
       color : $(this).parents('.js-colorbox').attr('data-overlap-color') || '#000000'
     , alpha : $(this).parents('.js-colorbox').attr('data-overlap-alpha') || 0
     , number: $(this).attr('data-overlap-number')                        || 0
     }
-    var mix = bg_color.mix(Color.newColorHexString(overlap.color), 1 - Math.pow(1-overlap.alpha, overlap.number))
+    var mix = Color.fromString(bg_color).mix(Color.fromString(overlap.color), 1 - Math.pow(1-overlap.alpha, overlap.number), false)
     $(this).html(mix.toString('hex'))
   }
 }
