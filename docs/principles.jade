@@ -1,18 +1,18 @@
 extends _docs.tpl.jade
 
 block append vars
-  - var page = Docs.DOCS.find('visual.html')
+  - var page = Docs.DOCS.find('principles.html')
 
 block append main
-  +newSection(Docs.DOCS.find('visual.html#typeface-scheme'))
-    include _includes/_visual.typeface-scheme.pug
-  +newSection(Docs.DOCS.find('visual.html#color-scheme'))
-    include _includes/_visual.color-scheme.pug
+  +newSection(Docs.DOCS.find('principles.html#typeface-scheme'))
+    include _includes/_principles.typeface-scheme.pug
+  +newSection(Docs.DOCS.find('principles.html#color-scheme'))
+    include _includes/_principles.color-scheme.pug
 
 block append scripts
   script(src="https://cdn.rawgit.com/chharvey/csscolor/master/index.js")
   script(src="../core/scripts/util.js")
   script(src="../core/scripts/color.js")
-  script(src="scripts/schemes.js")
+  script(src="scripts/principles.js")
   script.
     $('body').addClass('-bc-w -c-b') // only in js because can’t change template

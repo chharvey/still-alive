@@ -5,7 +5,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "pug:docs": "pug -O docs/_models/options.js docs/{phi,code,visual,base,obj,comp-typo,comp-ui,help,atom}.jade",
+    "pug:docs": "pug -O docs/_models/options.js docs/{phi,code,principles,base,obj,comp-typo,comp-ui,help,atom}.jade",
     "lessc:docs": "lessc  docs/styles/docs.less  docs/styles/docs.css",
     "lessc:core": "lessc  still-alive.less  still-alive.css",
     "build": "npm run pug:docs  &&  npm run lessc:docs  &&  npm run lessc:core",
