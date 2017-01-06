@@ -2,5 +2,5 @@
 
 module.exports = {
   basedir: './'
-, Docs: require('./classes/Docs.class.js')
+, Docs: require('./Docs.class.js')
 }
