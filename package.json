@@ -9,7 +9,7 @@
     "lessc:docs": "lessc  docs/styles/docs.less  docs/styles/docs.css",
     "lessc:core": "lessc  still-alive.less  still-alive.css",
     "browserify:principles": "browserify docs/scripts/principles.js > docs/scripts/principles.b.js",
-    "build": "npm run pug:docs  &&  npm run lessc:docs  &&  npm run lessc:core",
+    "build": "npm run pug:docs  &&  npm run lessc:docs  &&  npm run lessc:core  &&  npm run browserify:principles",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
