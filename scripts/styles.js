@@ -113,7 +113,7 @@ function mathJax() {
 
 $(document).ready(function () {
   pullquoteLines()
-  tableSpacing2()
+  // tableSpacing2()
   mathJax()
 })
 $(window).resize(function () {

@@ -1,0 +1,9 @@
+figure
+  ul
+    each family in Docs.FONT_SCHEME
+      li(class=family.class)
+        b= family.name
+        | &mdash;#{family.sample}
+  pre
+    each family in Docs.FONT_SCHEME
+      | &lt;li class="#[u= family.class]"&gt;#{family.name}&lt;/li&gt;&#x000a;

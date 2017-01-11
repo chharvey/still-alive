@@ -1,0 +1,34 @@
+p.
+  If you have footnotes
+  in the #[code footer] of a document or section, use a Footnotes List Component.
+  Read
+  #[a(rel="external" href="https://github.com/chharvey/chharvey.github.io/wiki/Footnotes") my technical report on footnotes]
+  for more information.
+figure
+  p.
+    Conversion gel is made with moon rocks.#[sup: a.Rf#rf-rocks(rel="this" href="#fn-rocks") 1]
+    Some panels are coated with conversion gel.#[sup: a.Rf#rf-panels(rel="this" href="#fn-panels") 2]
+  footer
+    ul.c-ListFootnotes
+      li.
+        #[sup: a.Fn#fn-rocks(rel="this" href="#rf-rocks") 1]
+        #[sup: a.Fn#fn-panels(rel="this" href="#rf-panels") 2]
+        Don&rsquo;t breathe in moon rocks; they will give you lung cancer.
+        However this may be unavoidable, given the amount of conversion gel on these panels.
+      li.
+        #[sup: a.Fn(href="#") 3]
+        An empty footnote. A footnote may include a citation, work cited, or simply a
+        parenthetical remark.
+  pre.
+    ... moon rocks.&lt;sup&gt;&lt;a&gt;1&lt;/a&gt;&lt;/sup&gt;
+    ... conversion gel.&lt;sup&gt;&lt;a&gt;2&lt;/a&gt;&lt;/sup&gt;
+    &lt;footer&gt;
+      &lt;ul class="#[u c-ListFootnotes]"&gt;
+        &lt;li&gt;
+          &lt;sup&gt;&lt;a&gt;1&lt;/a&gt;&lt;/sup&gt;
+          &lt;sup&gt;&lt;a&gt;2&lt;/a&gt;&lt;/sup&gt;
+          Don&rsquo;t breathe in moon rocks ...
+        &lt;/li&gt;
+        &lt;li&gt;&lt;sup&gt;&lt;a&gt;3&lt;/a&gt;&lt;/sup&gt;An empty footnote ...&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/footer&gt;
