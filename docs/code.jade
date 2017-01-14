@@ -271,9 +271,9 @@ block append main
           })(new TestSubject('Chell', function () { return true }))
     +newSection(Docs.DOCS.find('code.html#accessibility'))
       ul
-        li Always provide the #[code html[lang]] attribute.
-        li Always provide text for the #[code img[alt]] attribute.
-        li Provide text for the #[code a[title]] attribute if the link has non-textual content.
+        li Always provide the #[code= 'html[lang]'] attribute.
+        li Always provide text for the #[code= 'img[alt]'] attribute.
+        li Provide text for the #[code= 'a[title]'] attribute if the link has non-textual content.
         li For #[code table] elements:
           ul
             li.
@@ -289,7 +289,7 @@ block append main
               (the single row must be in exactly one of the
               #[code thead], #[code tfoot], or #[code tbody] elements)
             li.
-              always provide the #[code th[scope]] attribute
+              always provide the #[code= 'th[scope]'] attribute
         li
           p.
             When adding a link to one element, wrap the #[code &lt;a&gt;] tag around
@@ -313,11 +313,11 @@ block append main
               &lt;/a&gt;
             &lt;/section&gt;
         li.
-          Use exactly one #[code dfn] element per vocabulary term per page, and
-          always provide the #[code dfn[id]] attribute.
+          Suggestion: Use exactly one #[code dfn] element per vocabulary term per page, and
+          provide the #[code= 'dfn[id]'] attribute.
         li.
-          Use exactly one #[code abbr] element per abbreviation/acronym per page, and
-          always provide the #[code abbr[id]] and #[code abbr[title]] attributes.
+          Suggestion: Use exactly one #[code abbr] element per abbreviation/acronym per page, and
+          provide the #[code= 'abbr[id]'] and #[code= 'abbr[title]'] attributes.
     +newSection(Docs.DOCS.find('code.html#optimization'))
       ul
         li Never use any of the following elements or attributes. Use CSS to achieve the desired effect.
@@ -327,7 +327,7 @@ block append main
             li: code [align]
             li: code [border]
         li.
-          Omit the #[code [type]] attribute from the
+          Omit the #[code= '[type]'] attribute from the
           #[code &lt;link&gt;], #[code &lt;style&gt;], and #[code &lt;script&gt;] tags,
           but only if the value is default (#[code type="text/css"] or #[code type="text/javascript"])
         li Attributes shall have the following precedence and thus shall be written in the following order:
