@@ -320,7 +320,8 @@ block append main
           always provide the #[code abbr[id]] and #[code abbr[title]] attributes.
     +newSection(Docs.DOCS.find('code.html#optimization'))
       ul
-        li Never use any of the following elements or attributes. Use CSS to achieve the desired effect.
+        li
+          | Never use any of the following elements or attributes. Use CSS to achieve the desired effect.
           ul
             li: code font
             li: code hr
@@ -330,32 +331,44 @@ block append main
           Omit the #[code [type]] attribute from the
           #[code &lt;link&gt;], #[code &lt;style&gt;], and #[code &lt;script&gt;] tags,
           but only if the value is default (#[code type="text/css"] or #[code type="text/javascript"])
-        li Attributes shall have the following precedence and thus shall be written in the following order:
+        li
+          p Attributes should have the following precedence and thus shall be written in the following order:
           ol
             li: code class
             li: code id
             li any attributes starting with #[code data-]
             li.
-              any other #[a(href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes") global attributes]
-              not on this list (#[code style], #[code title], #[code lang], etc.)
+              any other #[a(href="https://www.w3.org/TR/html/dom.html#global-attributes") HTML global attributes]
+              not on this list (#[code style], #[code title], #[code lang], #[code tabindex], etc.)
               in any order
             li.
-              all element-specific attributes
+              any HTML element-specific attributes
               (#[code href], #[code src], #[code rel], #[code alt], etc.)
               in any order
             li
-              | microdata attributes in the following order:
+              | ARIA attributes in the following order:
+              ol
+                li: code role
+                li.
+                  any #[a(href="https://www.w3.org/TR/wai-aria-1.1/#global_states") ARIA global attributes]
+                  (#[code aria-hidden], #[code aria-current], #[code aria-label], etc.) in any order
+                li.
+                  any ARIA role-specific attributes
+                  (#[code aria-expanded], #[code aria-checked], #[code aria-readonly], etc.)
+                  in any order
+            li
+              | Microdata attributes in the following order:
               ol
                 li: code itemprop
                 li: code itemscope
                 li: code itemtype
                 li: code itemid
                 li: code itemref
-              small Microdata attributes, though global, are listed last to improve readability.
-          | Examples:
+          p: small ARIA and Microdata attributes, though global, are listed last to improve readability.
+          p Examples:
           figure: pre.
-            &lt;a data-name="index-1" href="//google.com/" itemprop="url" itemscope="" itemtype="//schema.org/URL"&gt;click here&lt;/a&gt;
-            &lt;img class="my-img" id="img1" data-type="jpeg" src="//google.com/logo.jpg" alt="the Google logo"/&gt;
+            &lt;a data-name="index-1" href="//google.com/" aria-label="Google website" itemprop="url" itemscope="" itemtype="//schema.org/URL"&gt;click here&lt;/a&gt;
+            &lt;img class="my-img" id="img1" data-type="jpeg" src="//google.com/logo.jpg" alt="the Google logo" role="presentation"/&gt;
       ul
         li Use unitless CSS values of 0.
         li Always use unitless line height.
