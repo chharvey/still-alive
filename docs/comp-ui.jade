@@ -4,12 +4,12 @@ block append vars
   - var page = Docs.DOCS.find('comp-ui.html')
 
 block append main
-  +newSection(Docs.DOCS.find('comp-ui.html#alert-component'))
+  +newSection(2, Docs.DOCS.find('comp-ui.html#alert-component'))
     include _includes/_comp-ui.alert-component.pug
-  +newSection(Docs.DOCS.find('comp-ui.html#label-component'))
+  +newSection(2, Docs.DOCS.find('comp-ui.html#label-component'))
     include _includes/_comp-ui.label-component.pug
-  +newSection(Docs.DOCS.find('comp-ui.html#badge-component'))
+  +newSection(2, Docs.DOCS.find('comp-ui.html#badge-component'))
     include _includes/_comp-ui.badge-component.pug
-  +newSection(Docs.DOCS.find('comp-ui.html#text-level-components'))
-    +newSection(Docs.DOCS.find('comp-ui.html#key-component'), 3)
+  +newSection(2, Docs.DOCS.find('comp-ui.html#text-level-components'))
+    +newSection(3, Docs.DOCS.find('comp-ui.html#key-component'))
       include _includes/_comp-ui.key-component.pug

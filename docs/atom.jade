@@ -4,11 +4,11 @@ block append vars
   - var page = Docs.DOCS.find('atom.html')
 
 block append main
-  +newSection(Docs.DOCS.find('atom.html#font-families'))
+  +newSection(2, Docs.DOCS.find('atom.html#font-families'))
     include _includes/_atom.font-families.pug
-  +newSection(Docs.DOCS.find('atom.html#font-sizes'))
+  +newSection(2, Docs.DOCS.find('atom.html#font-sizes'))
     include _includes/_atom.font-sizes.pug
-  +newSection(Docs.DOCS.find('atom.html#colors'))
+  +newSection(2, Docs.DOCS.find('atom.html#colors'))
     include _includes/_atom.colors.pug
 
 block append scripts
