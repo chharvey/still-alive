@@ -30,7 +30,10 @@ html(lang="en")
       link(rel="stylesheet" href="https://cdn.rawgit.com/chharvey/bangs/v0.9.1/bangs.min.css")
       link(rel="stylesheet" href="../still-alive.css")
       link(rel="stylesheet" href="styles/docs.css")
-  body.o-GoldenContainer(class={'-bc-w -c-b': cleanbody})
+  body.o-GoldenContainer(class={
+    '-bc-w -c-b': page.url() === 'principles.html'
+  , '-bi-n'     : page.url() === 'atom.html'
+  })
     header.o-GoldenContainer__Content
       h1= Docs.DOCS.name()
       p= Docs.DOCS.description()
