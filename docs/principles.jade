@@ -2,6 +2,7 @@ extends _docs.tpl.jade
 
 block append vars
   - var page = Docs.DOCS.find('principles.html')
+  - var cleanbody = true
 
 block append main
   +newSection(Docs.DOCS.find('principles.html#typeface-scheme'))
@@ -11,5 +12,3 @@ block append main
 
 block append scripts
   script(src="scripts/principles.b.js")
-  script.
-    $('body').addClass('-bc-w -c-b') // only in js because can’t change template
