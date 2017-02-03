@@ -16,8 +16,7 @@ module.exports = (function () {
    * The style guide site for this project.
    * @type {Page}
    */
-  Docs.DOCS = (function () {
-    return new Page({ name: 'Site Design', url: '/docs/' })
+  Docs.DOCS = new Page({ name: 'Site Design', url: '/docs/' })
       .title('Portfolio Style Guide')
       .add(new Page({ name: 'Home', url: 'index.html' })
         .description('Site Design Homepage')
@@ -122,7 +121,6 @@ module.exports = (function () {
         .add(new Page({ name: 'Font Sizes'   , url: 'atom.html#font-sizes' }))
         .add(new Page({ name: 'Colors'       , url: 'atom.html#colors' }))
       )
-  })()
 
   /**
    * Set of fonts used on the site.
