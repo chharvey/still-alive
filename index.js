@@ -1,1 +1,3 @@
-module.exports = require('./docs/_models/classes/Docs.class.js')
+module.exports = {
+  BlogPost: require('./_models/BlogPost.class.js')
+}
