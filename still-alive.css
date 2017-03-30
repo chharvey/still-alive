@@ -1,21 +1,16 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*\
     still-alive
-    Version: 1.1.0
+    Version: 1.2.0
     Licence: MIT
     Repo   : https://github.com/chharvey/still-alive.git
     Home   : https://github.com/chharvey/still-alive#readme
     Author : Chris Harvey <chrisharvey2pi@gmail.com> (https://chharvey.github.io/)
 \*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-@import url('https://cdn.rawgit.com/chharvey/xmeter/v5.2.0/xmeter.css');
-@import url('https://cdn.rawgit.com/chharvey/bangs/v0.9.0/bangs.css');
-@import url('https://cdn.rawgit.com/chharvey/lux-nox/v1.2.0/lux-nox.css');
 /*================================*\
     still-alive.less
 \*================================*/
 /*
  * # CONTENTS
- *
- * dev.css........................development mode: fixes for imported stylesheets
  *
  * ## BASE
  * base...........................unclassed html elements
@@ -61,9 +56,6 @@
  *
  * shame.css......................hacks and styles I haven’t figured out where to put yet
  */
-/*################################*\
-    still-alive  |  _dev.less
-\*################################*/
 /*################################*\
     still-alive  |  _base.less
 \*################################*/

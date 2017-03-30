@@ -1,7 +1,7 @@
 extends _docs.tpl.jade
 
 block append vars
-  - var page = Docs.DOCS.find('obj.html')
+  - var page = Docs.DOCS.find('/docs/obj.html')
 
 block append toc
   p.o-Box.c-Alert.c-Alert--help.
@@ -9,9 +9,11 @@ block append toc
     Backgrounds have been added to all Objects on this page to show structure.
 
 block append main
-  +newSection(Docs.DOCS.find('obj.html#box-object'))
+  +newSection(2, Docs.DOCS.find('/docs/obj.html#box-object'))
     include _includes/_obj.box-object.pug
-  +newSection(Docs.DOCS.find('obj.html#textbox-object'))
+  +newSection(2, Docs.DOCS.find('/docs/obj.html#textbox-object'))
     include _includes/_obj.textbox-object.pug
-  +newSection(Docs.DOCS.find('obj.html#golden-container'))
+  +newSection(2, Docs.DOCS.find('/docs/obj.html#golden-container'))
     include _includes/_obj.golden-container.pug
+    +newSection(3, Docs.DOCS.find('/docs/obj.html#flipped-golden-container'))
+      include _includes/_obj.flipped-golden-container.pug

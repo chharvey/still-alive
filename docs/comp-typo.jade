@@ -1,33 +1,33 @@
 extends _docs.tpl.jade
 
 block append vars
-  - var page = Docs.DOCS.find('comp-typo.html')
+  - var page = Docs.DOCS.find('/docs/comp-typo.html')
 
 block append main
-  +newSection(Docs.DOCS.find('comp-typo.html#subhead-component'))
+  +newSection(2, Docs.DOCS.find('/docs/comp-typo.html#subhead-component'))
     include _includes/_comp-typo.subhead-component.pug
-  +newSection(Docs.DOCS.find('comp-typo.html#folio-title-component'))
+  +newSection(2, Docs.DOCS.find('/docs/comp-typo.html#folio-title-component'))
     include _includes/_comp-typo.folio-title-component.pug
-  +newSection(Docs.DOCS.find('comp-typo.html#lede-drop-cap-components'))
+  +newSection(2, Docs.DOCS.find('/docs/comp-typo.html#lede-drop-cap-components'))
     include _includes/_comp-typo.lede-drop-cap-components.pug
-  +newSection(Docs.DOCS.find('comp-typo.html#caption-component'))
+  +newSection(2, Docs.DOCS.find('/docs/comp-typo.html#caption-component'))
     include _includes/_comp-typo.caption-component.pug
-  +newSection(Docs.DOCS.find('comp-typo.html#pull-quote-component'))
+  +newSection(2, Docs.DOCS.find('/docs/comp-typo.html#pull-quote-component'))
     include _includes/_comp-typo.pull-quote-component.pug
-  +newSection(Docs.DOCS.find('comp-typo.html#action-list-component'))
+  +newSection(2, Docs.DOCS.find('/docs/comp-typo.html#action-list-component'))
     include _includes/_comp-typo.action-list-component.pug
-  +newSection(Docs.DOCS.find('comp-typo.html#footnotes-list-component'))
+  +newSection(2, Docs.DOCS.find('/docs/comp-typo.html#footnotes-list-component'))
     include _includes/_comp-typo.footnotes-list-component.pug
-  +newSection(Docs.DOCS.find('comp-typo.html#components-for-tables'))
+  +newSection(2, Docs.DOCS.find('/docs/comp-typo.html#components-for-tables'))
     include _includes/_comp-typo.components-for-tables.pug
-  +newSection(Docs.DOCS.find('comp-typo.html#document-component'))
+  +newSection(2, Docs.DOCS.find('/docs/comp-typo.html#document-component'))
     include _includes/_comp-typo.document-component.pug
-  +newSection(Docs.DOCS.find('comp-typo.html#text-level-components'))
-    +newSection(Docs.DOCS.find('comp-typo.html#acronyms'), 3)
+  +newSection(2, Docs.DOCS.find('/docs/comp-typo.html#text-level-components'))
+    +newSection(3, Docs.DOCS.find('/docs/comp-typo.html#acronyms'))
       include _includes/_comp-typo.acronyms.pug
-    +newSection(Docs.DOCS.find('comp-typo.html#camo-links'), 3)
+    +newSection(3, Docs.DOCS.find('/docs/comp-typo.html#camo-links'))
       include _includes/_comp-typo.camo-links.pug
-  +newSection(Docs.DOCS.find('comp-typo.html#breadcrumbs'))
+  +newSection(2, Docs.DOCS.find('/docs/comp-typo.html#breadcrumbs'))
     include _includes/_comp-typo.breadcrumbs.pug
 
 block append scripts

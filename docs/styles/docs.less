@@ -10,8 +10,8 @@
 @import (reference) url('../../node_modules/xmeter/src/__tool.borders.less');
 @import (reference) url('../../node_modules/xmeter/src/__tool.fontsize.less');
 @import (reference) url('../../node_modules/xmeter/src/__tool.delims.less');
-@import (reference) url('../../styles/__settings.less');
-@import (reference) url('../../styles/_helpers.less');
+@import (reference) url('../../src/__settings.less');
+@import (reference) url('../../src/_helpers.less');
 
 
 /*++++++++++++++++++++++++++++++++*\
@@ -117,6 +117,8 @@ body {
   font-weight:bold;
 }
 .docs-_fragid {
+  display: inline; // override `a` base styles
+  line-height: 0;  // override `a` base styles
   margin-left: 1rem;
   font-weight: 100;
   &::before {
@@ -127,5 +129,8 @@ h1, h2, h3, h4, h5, h6 {
   &:hover > .docs-_fragid::before {
     content: '\00a7'; // §
   }
+}
+.docs-_fragid:focus::before {
+  content: '\00a7'; // §
 }
 //++++ #end OVERRIDES ++++//

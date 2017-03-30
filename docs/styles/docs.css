@@ -103,6 +103,8 @@ body {
   font-weight: bold;
 }
 .docs-_fragid {
+  display: inline;
+  line-height: 0;
   margin-left: 1rem;
   font-weight: 100;
 }
@@ -115,5 +117,8 @@ h3:hover > .docs-_fragid::before,
 h4:hover > .docs-_fragid::before,
 h5:hover > .docs-_fragid::before,
 h6:hover > .docs-_fragid::before {
+  content: '\00a7';
+}
+.docs-_fragid:focus::before {
   content: '\00a7';
 }

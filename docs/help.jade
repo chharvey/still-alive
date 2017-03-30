@@ -1,10 +1,10 @@
 extends _docs.tpl.jade
 
 block append vars
-  - var page = Docs.DOCS.find('help.html')
+  - var page = Docs.DOCS.find('/docs/help.html')
 
 block append main
-  +newSection(Docs.DOCS.find('help.html#after-helpers'))
+  +newSection(2, Docs.DOCS.find('/docs/help.html#after-helpers'))
     include _includes/_help.after-helpers.pug
-  +newSection(Docs.DOCS.find('help.html#crossgrid-lined'))
+  +newSection(2, Docs.DOCS.find('/docs/help.html#crossgrid-lined'))
     include _includes/_help.crossgrid-lined.pug

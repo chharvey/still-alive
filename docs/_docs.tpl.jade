@@ -15,21 +15,10 @@ html(lang="en")
             = ': ' + item.description()
           if item.findAll().length && depth > 0
             +doctoc({pages: item.findAll(), classes: (classes.sub || {}), depth: depth-1})
-  mixin newSection(page, hn)
+  mixin newSection(n, page)
     - var id = page.url().split('#')[1]
     section(id=id)
-      if hn === 1
-        h1 #{page.name()} #[a.docs-_fragid(href=`#${id}`)]
-      else if hn === 3
-        h3 #{page.name()} #[a.docs-_fragid(href=`#${id}`)]
-      else if hn === 4
-        h4 #{page.name()} #[a.docs-_fragid(href=`#${id}`)]
-      else if hn === 5
-        h5 #{page.name()} #[a.docs-_fragid(href=`#${id}`)]
-      else if hn === 6
-        h6 #{page.name()} #[a.docs-_fragid(href=`#${id}`)]
-      else
-        h2 #{page.name()} #[a.docs-_fragid(href=`#${id}`)]
+      | <h#{n}>#{page.name()} <a class="docs-_fragid" href="##{id}" aria-label="permalink"></a></h#{n}>
       block
   block vars
   head
@@ -37,11 +26,14 @@ html(lang="en")
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     block styles
-      //- link(rel="stylesheet" href="https://cdn.rawgit.com/chharvey/xmeter/v5.3.0/xmeter.min.css") TODO: uncomment once Xmeter is out of still-alive.less
-      link(rel="stylesheet" href="https://cdn.rawgit.com/chharvey/bangs/v0.9.0/bangs.min.css")
+      link(rel="stylesheet" href="https://cdn.rawgit.com/chharvey/xmeter/v5.3.1/xmeter.min.css")
+      link(rel="stylesheet" href="https://cdn.rawgit.com/chharvey/bangs/v0.9.1/bangs.min.css")
       link(rel="stylesheet" href="../still-alive.css")
       link(rel="stylesheet" href="styles/docs.css")
-  body.o-GoldenContainer
+  body.o-GoldenContainer(class={
+    '-bc-w -c-b': page.url() === 'principles.html'
+  , '-bi-n'     : page.url() === 'atom.html'
+  })
     header.o-GoldenContainer__Content
       h1= Docs.DOCS.name()
       p= Docs.DOCS.description()
@@ -59,5 +51,3 @@ html(lang="en")
               +doctoc({pages: page.findAll(), classes: null, depth: Infinity})
     block scripts
       script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
-      script(src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,https://chharvey.github.io/chhlib/mathjax-localconfig.js")
-      //- script(src="../core/scripts/global.js")
