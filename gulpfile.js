@@ -28,7 +28,7 @@ gulp.task('lessc:docs', function () {
 })
 
 gulp.task('lessc:core', function () {
-  return gulp.src('still-alive.less')
+  return gulp.src('src/still-alive.less')
     .pipe(less())
     .pipe(autoprefixer({
       grid: true,
