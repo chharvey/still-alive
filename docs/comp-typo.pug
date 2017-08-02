@@ -22,6 +22,8 @@ block append main
     include _includes/_comp-typo.components-for-tables.pug
   +newSection(2, Docs.DOCS.find('/docs/comp-typo.html#document-component'))
     include _includes/_comp-typo.document-component.pug
+  +newSection(Docs.DOCS.find('comp-typo.html#document-meta'))
+    include _includes/_comp-typo.document-meta.pug
   +newSection(2, Docs.DOCS.find('/docs/comp-typo.html#text-level-components'))
     +newSection(3, Docs.DOCS.find('/docs/comp-typo.html#acronyms'))
       include _includes/_comp-typo.acronyms.pug
