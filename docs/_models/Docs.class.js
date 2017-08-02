@@ -1,22 +1,7 @@
 var Page = require('sitepage').Page
 
-module.exports = (function () {
-  // CONSTRUCTOR
-  /**
-   * A set of static members used for the site style guide.
-   * Similar to a utility class.
-   * @constructor
-   */
-  function Docs() {}
-
-  // METHODS
-
-  // STATIC MEMBERS
-  /**
-   * The style guide site for this project.
-   * @type {Page}
-   */
-  Docs.DOCS = new Page({ name: 'Site Design', url: '/docs/' })
+const DOCS = new Page({ name: 'Site Design', url: '/docs/' })
+  // REVIEW indentation
     .title('Portfolio Style Guide')
     .add(new Page({ name: 'Home', url: '/docs/index.html' })
       .description('Site Design Homepage')
@@ -94,9 +79,8 @@ module.exports = (function () {
       .add(new Page({ name: 'The Action List Component'       , url: '/docs/comp-typo.html#action-list-component' }))
       .add(new Page({ name: 'The Footnotes List Component'    , url: '/docs/comp-typo.html#footnotes-list-component' }))
       .add(new Page({ name: 'Components for Tables'           , url: '/docs/comp-typo.html#components-for-tables' }))
-      .add(new Page({ name: 'The Document Component'          , url: '/docs/comp-typo.html#document-component' })
-        .add(new Page({ name: 'Document Meta', url: '/docs/comp-typo.html#document-meta' }))
-      )
+      .add(new Page({ name: 'The Document Component'          , url: '/docs/comp-typo.html#document-component' }))
+      .add(new Page({ name: 'Document Meta'                   , url: '/docs/comp-typo.html#document-meta' }))
       .add(new Page({ name: 'Text-Level Components', url: '/docs/comp-typo.html#text-level-components' })
         .add(new Page({ name: 'Acronyms'  , url: '/docs/comp-typo.html#acronyms' }))
         .add(new Page({ name: 'Camo Links', url: '/docs/comp-typo.html#camo-links' }))
@@ -122,11 +106,31 @@ module.exports = (function () {
       .add(new Page({ name: 'Colors'       , url: '/docs/atom.html#colors' }))
     )
 
+/**
+ * Static class for this project’s docs.
+ * @module
+ */
+module.exports = class Docs {
+  /**
+   * A set of static members used for the site style guide.
+   * Similar to a utility class.
+   * @constructor
+   */
+  /** @private */ constructor() {}
+
+  /**
+   * The style guide site for this project.
+   * @type {Page}
+   */
+  static get DOCS() { return DOCS }
+
   /**
    * Set of fonts used on the site.
    * @type {Object}
    */
-  Docs.FONT_SCHEME = {
+  static get FONT_SCHEME() {
+    return {
+      // REVIEW indentation
     base : {
       name    : 'Avenir Next'
     , class   : 'a-ff-base'
@@ -168,13 +172,16 @@ module.exports = (function () {
     , class   : 'a-ff-script'
     , sample  : 'The quick brown fox jumps over the lazy dog.'
     }
+    }
   }
 
   /**
    * Set of colors used on the site.
    * @type {Object}
    */
-  Docs.COLOR_SCHEME = {
+  static get COLOR_SCHEME() {
+    return {
+      // REVIEW indentation
     aperturewhite : {
       name        : 'Aperture White'
     , code_dfn    : 'hsv(217,   5%, 100%)'
@@ -305,13 +312,16 @@ module.exports = (function () {
     , is_dark  : true
     , uses     : [ 'dark component default' ]
     }
+    }
   }
 
   /**
    * Set of translucent colors, shades and tints, used on the site.
    * @type {Object}
    */
-  Docs.TRANS_SCHEME = {
+  static get TRANS_SCHEME() {
+    return {
+      // REVIEW indentation
     tintlight : {
       name      : 'Tint Light'
     , code_dfn  : 'fadeout(@aperturewhite, 80%)'
@@ -340,7 +350,6 @@ module.exports = (function () {
     , bg_class  : 'a-bc-shadeheavy'
     , box_color : Docs.COLOR_SCHEME.aperturewhite
     }
+    }
   }
-
-  return Docs
-})()
+}

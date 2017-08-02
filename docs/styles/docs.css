@@ -92,9 +92,13 @@ body {
 }
 #syntax-example,
 #syntax-example * {
+  -webkit-transition-property: border-color, color, background-color;
   transition-property: border-color, color, background-color;
+  -webkit-transition-duration: 250ms;
   transition-duration: 250ms;
+  -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
+  -webkit-transition-delay: 0ms;
   transition-delay: 0ms;
 }
 [data-overlap-color] > pre.ColorCode::before {
