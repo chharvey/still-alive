@@ -1,6 +1,6 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*\
     still-alive
-    Version: 1.2.0
+    Version: 1.3.0
     Licence: MIT
     Repo   : https://github.com/chharvey/still-alive.git
     Home   : https://github.com/chharvey/still-alive#readme
@@ -80,24 +80,12 @@ h6 {
   font-weight: 800;
   text-rendering: geometricPrecision;
   -webkit-transition-property: font-size, line-height;
-  -moz-transition-property: font-size, line-height;
-  -ms-transition-property: font-size, line-height;
-  -o-transition-property: font-size, line-height;
   transition-property: font-size, line-height;
   -webkit-transition-duration: 125ms;
-  -moz-transition-duration: 125ms;
-  -ms-transition-duration: 125ms;
-  -o-transition-duration: 125ms;
   transition-duration: 125ms;
   -webkit-transition-timing-function: ease;
-  -moz-transition-timing-function: ease;
-  -ms-transition-timing-function: ease;
-  -o-transition-timing-function: ease;
   transition-timing-function: ease;
   -webkit-transition-delay: 0ms;
-  -moz-transition-delay: 0ms;
-  -ms-transition-delay: 0ms;
-  -o-transition-delay: 0ms;
   transition-delay: 0ms;
 }
 h1 {
@@ -370,26 +358,8 @@ a:active {
 }
 @media screen {
   a {
-    -webkit-transition-property: color;
-    -moz-transition-property: color;
-    -ms-transition-property: color;
-    -o-transition-property: color;
-    transition-property: color;
-    -webkit-transition-duration: 125ms;
-    -moz-transition-duration: 125ms;
-    -ms-transition-duration: 125ms;
-    -o-transition-duration: 125ms;
-    transition-duration: 125ms;
-    -webkit-transition-timing-function: ease;
-    -moz-transition-timing-function: ease;
-    -ms-transition-timing-function: ease;
-    -o-transition-timing-function: ease;
-    transition-timing-function: ease;
-    -webkit-transition-delay: 0ms;
-    -moz-transition-delay: 0ms;
-    -ms-transition-delay: 0ms;
-    -o-transition-delay: 0ms;
-    transition-delay: 0ms;
+    -webkit-transition: color 125ms;
+    transition: color 125ms;
   }
 }
 a[rel~="external"] {
@@ -772,24 +742,12 @@ code {
 .o-GoldenContainer,
 .o-GoldenContainerFlip {
   -webkit-transition-property: margin;
-  -moz-transition-property: margin;
-  -ms-transition-property: margin;
-  -o-transition-property: margin;
   transition-property: margin;
   -webkit-transition-duration: 125ms;
-  -moz-transition-duration: 125ms;
-  -ms-transition-duration: 125ms;
-  -o-transition-duration: 125ms;
   transition-duration: 125ms;
   -webkit-transition-timing-function: ease;
-  -moz-transition-timing-function: ease;
-  -ms-transition-timing-function: ease;
-  -o-transition-timing-function: ease;
   transition-timing-function: ease;
   -webkit-transition-delay: 0ms;
-  -moz-transition-delay: 0ms;
-  -ms-transition-delay: 0ms;
-  -o-transition-delay: 0ms;
   transition-delay: 0ms;
 }
 @media screen {
@@ -809,24 +767,12 @@ code {
 .o-GoldenContainerFlip__Content,
 .o-GoldenContainerFlip__Sidebar {
   -webkit-transition-property: width, padding;
-  -moz-transition-property: width, padding;
-  -ms-transition-property: width, padding;
-  -o-transition-property: width, padding;
   transition-property: width, padding;
   -webkit-transition-duration: 125ms;
-  -moz-transition-duration: 125ms;
-  -ms-transition-duration: 125ms;
-  -o-transition-duration: 125ms;
   transition-duration: 125ms;
   -webkit-transition-timing-function: ease;
-  -moz-transition-timing-function: ease;
-  -ms-transition-timing-function: ease;
-  -o-transition-timing-function: ease;
   transition-timing-function: ease;
   -webkit-transition-delay: 0ms;
-  -moz-transition-delay: 0ms;
-  -ms-transition-delay: 0ms;
-  -o-transition-delay: 0ms;
   transition-delay: 0ms;
 }
 @media screen and (min-width: 30em) {
@@ -895,24 +841,12 @@ code {
 .o-GoldenContainerFlip__Content__SideMajor,
 .o-GoldenContainerFlip__Content__SideMinor {
   -webkit-transition-property: left, top, width, padding;
-  -moz-transition-property: left, top, width, padding;
-  -ms-transition-property: left, top, width, padding;
-  -o-transition-property: left, top, width, padding;
   transition-property: left, top, width, padding;
   -webkit-transition-duration: 125ms;
-  -moz-transition-duration: 125ms;
-  -ms-transition-duration: 125ms;
-  -o-transition-duration: 125ms;
   transition-duration: 125ms;
   -webkit-transition-timing-function: ease;
-  -moz-transition-timing-function: ease;
-  -ms-transition-timing-function: ease;
-  -o-transition-timing-function: ease;
   transition-timing-function: ease;
   -webkit-transition-delay: 0ms;
-  -moz-transition-delay: 0ms;
-  -ms-transition-delay: 0ms;
-  -o-transition-delay: 0ms;
   transition-delay: 0ms;
 }
 @media screen and (min-width: 45em) {
@@ -1379,6 +1313,7 @@ dd.c-TableOldstyle dd {
 \*################################*/
 figure > img,
 .c-FigImg {
+  -webkit-box-shadow: 0 0.25rem 0.5rem 0.5rem rgba(13, 8, 0, 0.2);
   box-shadow: 0 0.25rem 0.5rem 0.5rem rgba(13, 8, 0, 0.2);
 }
 /*################################*\
@@ -1411,6 +1346,7 @@ figure > img,
   font-weight: normal;
   font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
   text-rendering: optimizeLegibility;
+  -webkit-box-shadow: 0 1px 2px 1px rgba(13, 8, 0, 0.2);
   box-shadow: 0 1px 2px 1px rgba(13, 8, 0, 0.2);
   background: #c7c5c2;
   text-shadow: 0 1px 4px rgba(242, 247, 255, 0.8);
@@ -1418,6 +1354,7 @@ figure > img,
   font-weight: 200;
 }
 .c-Alert--dang {
+  -webkit-box-shadow: 0 1px 2px 1px rgba(13, 8, 0, 0.2);
   box-shadow: 0 1px 2px 1px rgba(13, 8, 0, 0.2);
   background: #383a3d;
   text-shadow: 0 1px 4px rgba(13, 8, 0, 0.8);
@@ -1457,6 +1394,7 @@ figure > img,
   font-weight: normal;
   font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
   text-rendering: optimizeLegibility;
+  -webkit-box-shadow: 0 1px 2px 1px rgba(13, 8, 0, 0.2);
   box-shadow: 0 1px 2px 1px rgba(13, 8, 0, 0.2);
   background: #c7c5c2;
   text-shadow: 0 1px 4px rgba(242, 247, 255, 0.8);
@@ -1464,6 +1402,7 @@ figure > img,
   font-weight: 200;
 }
 .c-Label--dang {
+  -webkit-box-shadow: 0 1px 2px 1px rgba(13, 8, 0, 0.2);
   box-shadow: 0 1px 2px 1px rgba(13, 8, 0, 0.2);
   background: #383a3d;
   text-shadow: 0 1px 4px rgba(13, 8, 0, 0.8);
@@ -1491,6 +1430,7 @@ figure > img,
   font-weight: normal;
   font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
   text-rendering: optimizeLegibility;
+  -webkit-box-shadow: 0 1px 2px 1px rgba(13, 8, 0, 0.2);
   box-shadow: 0 1px 2px 1px rgba(13, 8, 0, 0.2);
   background: #383a3d;
   text-shadow: 0 1px 4px rgba(13, 8, 0, 0.8);
@@ -1533,6 +1473,7 @@ figure > img,
     background: #002b36;
     color: #93a1a1;
     text-shadow: 0 1px 2px rgba(242, 247, 255, 0.2);
+    -webkit-box-shadow: 0 1px 2px 1px rgba(13, 8, 0, 0.2), inset 0 2px 1px 0 rgba(242, 247, 255, 0.2);
     box-shadow: 0 1px 2px 1px rgba(13, 8, 0, 0.2), inset 0 2px 1px 0 rgba(242, 247, 255, 0.2);
   }
 }
@@ -1561,24 +1502,12 @@ figure > img,
 }
 .Crumb {
   -webkit-transition-property: background-color, color;
-  -moz-transition-property: background-color, color;
-  -ms-transition-property: background-color, color;
-  -o-transition-property: background-color, color;
   transition-property: background-color, color;
   -webkit-transition-duration: 125ms;
-  -moz-transition-duration: 125ms;
-  -ms-transition-duration: 125ms;
-  -o-transition-duration: 125ms;
   transition-duration: 125ms;
   -webkit-transition-timing-function: ease;
-  -moz-transition-timing-function: ease;
-  -ms-transition-timing-function: ease;
-  -o-transition-timing-function: ease;
   transition-timing-function: ease;
   -webkit-transition-delay: 0ms;
-  -moz-transition-delay: 0ms;
-  -ms-transition-delay: 0ms;
-  -o-transition-delay: 0ms;
   transition-delay: 0ms;
   display: block;
   padding-left: 0.75rem;
