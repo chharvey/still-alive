@@ -7,6 +7,7 @@
 /*================================*\
     docs.less
 \*================================*/
+@import (reference) url('../../../node_modules/xmeter/src/__settings.less');
 @import (reference) url('../../../node_modules/xmeter/src/__tool.borders.less');
 @import (reference) url('../../../node_modules/xmeter/src/__tool.fontsize.less');
 @import (reference) url('../../../node_modules/xmeter/src/__tool.delims.less');
@@ -39,7 +40,7 @@ body {
   padding: 0.375rem 0.5rem;
 }
 .c-FontSamp__Letter {
-  .font-size-el(@g-font_size_peta; 4);
+  .font-size-el(@g-font-size-peta; 4);
   text-rendering: geometricPrecision;
 }
 .c-FontSamp__Sentence {
@@ -52,7 +53,7 @@ body {
   font-style: inherit;
   font-weight: 600;
   font-family: inherit;
-  .font-size-el(@g-font_size_kilo);
+  .font-size-el(@g-font-size-kilo);
   color: inherit;
 }
 .ColorRelation {

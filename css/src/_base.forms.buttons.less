@@ -24,7 +24,7 @@
 : 2015-02-11
   */
 .Button {
-  .gradient(to bottom right, lighten(@color_btn_up_bg, 5%), darken(@color_btn_up_bg, 10%););
+  background-image: linear-gradient(to bottom right, lighten(@color_btn_up_bg, 5%), darken(@color_btn_up_bg, 10%));
   padding: @project_boxpadding_tny;
   margin-bottom: (-2 * @btn_brdr_width);
   border-width: @btn_brdr_width;
@@ -44,7 +44,7 @@
     background-color: @color_btn_dn_bg;
   }
   &:active {
-    .gradient(to top left,     lighten(@color_btn_dn_bg, 5%), darken(@color_btn_dn_bg, 10%););
+    background-image: linear-gradient(to top left,     lighten(@color_btn_dn_bg, 5%), darken(@color_btn_dn_bg, 10%));
     border-style: inset;
   }
 }
