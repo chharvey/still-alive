@@ -1,12 +1,12 @@
 mixin fontBox(typeface, has_footer)
-  section.o-Grid
+  section.o-Grid.o-Grid--fontBox
     mixin description()
       p Sample description.
     mixin footer()
       footer Sample footer.
     block
-    h3.o-Grid__Item.-w-1o1= typeface.name
-    div.o-Grid__Item.-w-p1
+    h3.o-Grid__Item= typeface.name
+    div.o-Grid__Item
       if (typeface.similar && typeface.similar[0])
         p
           | Similar:#{' '}
@@ -15,7 +15,7 @@ mixin fontBox(typeface, has_footer)
             b= name
             = ((index < typeface.similar.length-1) ? ', ' : '')
       +description()
-    div.o-Grid__Item.-w-p2
+    div.o-Grid__Item
       figure.c-FontSamp(class=typeface.class)
         div.c-FontSamp__Letter Aa
         p.c-FontSamp__Sentence= typeface.sample
@@ -31,7 +31,8 @@ mixin fontBox(typeface, has_footer)
           input(type="text" value="400 (normal)" disabled="")
         input.-d-bk(type="reset")
     if has_footer
-      +footer()
+      footer.o-Grid__Item
+        +footer()
 +fontBox(Docs.FONT_SCHEME.base)
   mixin description()
     p.
@@ -55,7 +56,6 @@ mixin fontBox(typeface, has_footer)
       serifs, and true italics, which means it uses a whole new set of glyphs.
       #[sup: a.Rf#rf-baskerville(rel="this" href="#fn-baskerville") 1]
   mixin footer()
-    footer.o-Grid__Item.-w-1o1
       ul.c-ListFootnotes
         li.
           #[sup: a.Fn#fn-baskerville(rel="this" href="#rf-baskerville") 1]

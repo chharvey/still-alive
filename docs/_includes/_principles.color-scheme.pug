@@ -1,5 +1,5 @@
 mixin colorBox(color)
-  section.o-Grid__Item.o-Box.-w-1o2.js-colorbox(class=[color.bg_class, (color.is_dark) ? 'h-darkbg' : ''] style={
+  section.o-Grid__Item.o-Box.js-colorbox(class=[color.bg_class, (color.is_dark) ? 'h-darkbg' : ''] style={
     'border-radius': '0',
   })
     mixin description()
@@ -14,7 +14,7 @@ mixin colorBox(color)
           li= el
 mixin colorBoxTrans(color, n, section_specs, transbox_specs)
   - section_specs = section_specs || {}
-  section.o-Grid__Item.o-Box.-w-1o2.js-colorbox(class=['data-'+color.bg_class, (color.is_dark) ? 'h-darkbg' : ''] style={
+  section.o-Grid__Item.o-Box.js-colorbox(class=['data-'+color.bg_class, (color.is_dark) ? 'h-darkbg' : ''] style={
     'border-radius': '0',
     'background-color': color.box_color.code_hex
   } data-overlap-color=color.code_hexa.slice(5,12) data-overlap-alpha=color.code_hexa.slice(-4,-1))&attributes(section_specs)
@@ -42,8 +42,8 @@ mixin colorBoxTrans(color, n, section_specs, transbox_specs)
 footer: p.
   Based on the
   #[a(rel="external" href="http://www.thinkwithportals.com/"): cite Portal] video game series.
-section.o-Grid
-  h3.o-Grid__Item Main Portal Colors
+section.o-Grid.o-Grid--duo
+  h3.o-Grid__Item.o-Grid__Item--fullCol Main Portal Colors
   +colorBox(Docs.COLOR_SCHEME.aperturewhite)
     mixin description()
       p.
@@ -97,8 +97,8 @@ section.o-Grid
   +colorBox(Docs.COLOR_SCHEME.propulsion)
     mixin description()
       p #[i Forwarding] the cause of science.
-section.o-Grid
-  h3.o-Grid__Item UI Component Colors
+section.o-Grid.o-Grid--duo
+  h3.o-Grid__Item.o-Grid__Item--fullCol UI Component Colors
   +colorBox(Docs.COLOR_SCHEME.graylite)
   +colorBox(Docs.COLOR_SCHEME.graydark)
   +colorBox(Docs.COLOR_SCHEME.deploying)
@@ -138,8 +138,8 @@ section.o-Grid
         You&rsquo;ve
         got sucker&rsquo;s luck. Have you given up? Does it feel
         like a trial? Does it trouble your mind the way you trouble mine?
-section.o-Grid
-  h3.o-Grid__Item Tints &amp; Shades
+section.o-Grid.o-Grid--duo
+  h3.o-Grid__Item.o-Grid__Item--fullCol Tints &amp; Shades
   +colorBoxTrans(Docs.TRANS_SCHEME.tintlight,  7, { class: 'h-darkbg' })
   +colorBoxTrans(Docs.TRANS_SCHEME.shadelight, 7)
   +colorBoxTrans(Docs.TRANS_SCHEME.tintheavy,  4, { class: 'h-darkbg' }, { class: '-c-b' })
