@@ -21,12 +21,13 @@
 // : 2015-12-09
 .c-Label {
   .ui-font();
+  .ui-skin();
   .ui-lite();
   font-weight: 200;
 }
 
-.c-Label--dang { .ui-dark(); background: @g-color-portal-deploying ; }
-.c-Label--cshn {             background: @g-color-portal-hereye    ; }
-.c-Label--skss {             background: @g-color-portal-neurotoxin; }
-.c-Label--info {             background: @g-color-portal-bridges   ; }
-.c-Label--help {             background: @g-color-portal-companion ; }
+.c-Label--dang { .ui-dark(); --ui-bgcolor: @g-color-portal-deploying ; }
+.c-Label--cshn {             --ui-bgcolor: @g-color-portal-hereye    ; }
+.c-Label--skss {             --ui-bgcolor: @g-color-portal-neurotoxin; }
+.c-Label--info {             --ui-bgcolor: @g-color-portal-bridges   ; }
+.c-Label--help {             --ui-bgcolor: @g-color-portal-companion ; }

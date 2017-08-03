@@ -32,15 +32,16 @@
 .c-Alert {
   .font-size-el(@g-font-size-mill);
   .ui-font();
+  .ui-skin();
   .ui-lite();
   font-weight: 200;
 }
 
-.c-Alert--dang { .ui-dark(); background: @g-color-portal-deploying ; }
-.c-Alert--cshn {             background: @g-color-portal-hereye    ; }
-.c-Alert--skss {             background: @g-color-portal-neurotoxin; }
-.c-Alert--info {             background: @g-color-portal-bridges   ; }
-.c-Alert--help {             background: @g-color-portal-companion ; }
+.c-Alert--dang { .ui-dark(); --ui-bgcolor: @g-color-portal-deploying ; }
+.c-Alert--cshn {             --ui-bgcolor: @g-color-portal-hereye    ; }
+.c-Alert--skss {             --ui-bgcolor: @g-color-portal-neurotoxin; }
+.c-Alert--info {             --ui-bgcolor: @g-color-portal-bridges   ; }
+.c-Alert--help {             --ui-bgcolor: @g-color-portal-companion ; }
 
 .c-Alert__Title {
   padding-right: 1rem;
