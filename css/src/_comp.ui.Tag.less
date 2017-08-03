@@ -1,0 +1,44 @@
+
+/*################################*\
+    _comp.ui.Tag.less
+\*################################*/
+
+
+// A Tag looks like a physical "tag".
+//
+// *[1] because `::before` has `position: absolute;`
+//
+// ^author
+// : Chris Harvey
+// ^updated
+// : 2015-06-07
+.c-Tag {
+  position: relative; // *[1]
+  &::before {
+    @x: 0.5em;
+    @y: 0.75em;
+    content: '';
+    display: block;
+    width: 0;
+    border-width: @y @x @y 0;
+    border-style: solid;
+    border-color: transparent;
+    border-right-color: @g-color-portal-aperturegray_lite;
+    position: absolute;
+    left: -@x;
+    top: 0;
+    z-index: 1;
+  }
+}
+.c-Tag-mx(@color) {
+  background-color: @color; // fallback
+  background-image:         linear-gradient(to right, @color, darken(@color, 15%));
+  &::before {
+    border-right-color: @color;
+  }
+}
+.c-Tag--dang { .c-Tag-mx(@g-color-portal-deploying) ; }
+.c-Tag--cshn { .c-Tag-mx(@g-color-portal-hereye)    ; }
+.c-Tag--skss { .c-Tag-mx(@g-color-portal-neurotoxin); }
+.c-Tag--info { .c-Tag-mx(@g-color-portal-bridges)   ; }
+.c-Tag--help { .c-Tag-mx(@g-color-portal-companion) ; }

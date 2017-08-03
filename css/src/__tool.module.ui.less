@@ -1,0 +1,37 @@
+
+/*################################*\
+    still-alive  |  __tool.module.ui.less
+\*################################*/
+
+
+// Use this mixin on most (if not all) UI components to give the font a consistent look-and-feel
+.ui-font() {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-family: @g-fontfamily-accent;
+}
+
+// set the colored properties
+.ui-skin() {
+  box-shadow: 0 1px 2px 1px var(--ui-box-shadow-color);
+  background-color: var(--ui-bgcolor);
+  text-shadow: 0 1px 4px var(--ui-text-shadow-color);
+  color: var(--ui-txcolor);
+}
+
+// Use this mixin on UI components that are lighter-colored by default
+.ui-lite() {
+  --ui-box-shadow-color : @g-color-portal-shadelight;
+  --ui-bgcolor          : @g-color-portal-graylite;
+  --ui-text-shadow-color: @g-color-portal-tintheavy;
+  --ui-txcolor          : @g-color-portal-apertureblack;
+}
+
+// Use this mixin on UI components that are darker-colored by default
+.ui-dark() {
+  --ui-box-shadow-color : @g-color-portal-tintlight;
+  --ui-bgcolor          : @g-color-portal-graydark;
+  --ui-text-shadow-color: @g-color-portal-shadeheavy;
+  --ui-txcolor          : @g-color-portal-aperturewhite;
+}

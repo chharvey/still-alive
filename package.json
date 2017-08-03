@@ -5,11 +5,11 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "browserify:principles": "browserify docs/scripts/principles.js > docs/scripts/principles.b.js",
-    "build": "npm run browserify:principles  &&  gulp build",
+    "browserify:principles": "browserify docs/js/principles.js > docs/js/principles.b.js",
+    "build": "gulp build  &&  npm run browserify:principles",
     "unbuild:docs": "rm docs/{index,phi,code,principles,base,obj,comp-typo,comp-ui,help,atom}.html",
-    "unbuild:css": "rm {still-alive,still-alive.min}.css still-alive.min.css.map docs/styles/docs.css",
-    "unbuild:js": "rm docs/scripts/principles.b.js",
+    "unbuild:css": "rm css/{still-alive.css,still-alive.css.map} docs/css/docs.css",
+    "unbuild:js": "rm docs/js/principles.b.js",
     "unbuild": "npm run unbuild:docs  &&  npm run unbuild:css  &&  npm run unbuild:js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -35,11 +35,10 @@
     "gulp-clean-css": "^3.6.0",
     "gulp-less": "^3.3.2",
     "gulp-pug": "^3.3.0",
-    "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.6.0",
     "lux-nox": "^1.2.0",
     "pug-cli": "^1.0.0-alpha6",
     "sitepage": "^1.0.0",
-    "xmeter": "^5.3.0"
+    "xmeter": "git://github.com/chharvey/xmeter.git#beta-v6"
   }
 }

@@ -1,5 +1,4 @@
 var gulp = require('gulp')
-var rename = require('gulp-rename')
 var pug = require('gulp-pug')
 var less = require('gulp-less')
 var autoprefixer = require('gulp-autoprefixer')
@@ -18,32 +17,27 @@ gulp.task('pug:docs', function () {
 })
 
 gulp.task('lessc:docs', function () {
-  return gulp.src('docs/styles/docs.less')
+  return gulp.src('docs/css/src/docs.less')
     .pipe(less())
     .pipe(autoprefixer({
       grid: true,
       cascade: false,
     }))
-    .pipe(gulp.dest('./docs/styles/'))
+    .pipe(gulp.dest('./docs/css/'))
 })
 
 gulp.task('lessc:core', function () {
-  return gulp.src('src/still-alive.less')
+  return gulp.src(__dirname + '/css/src/still-alive.less')
     .pipe(less())
     .pipe(autoprefixer({
       grid: true,
       cascade: false,
     }))
-    .pipe(gulp.dest('./'))
-})
-
-gulp.task('minify', ['lessc:core'], function () {
-  return gulp.src('still-alive.css')
+    .pipe(gulp.dest('./css/'))
     .pipe(sourcemaps.init())
     .pipe(clean_css())
-    .pipe(rename('still-alive.min.css'))
     .pipe(sourcemaps.write('./')) // writes to an external .map file
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('./css/'))
 })
 
-gulp.task('build', ['pug:docs', 'lessc:docs', 'minify'])
+gulp.task('build', ['pug:docs', 'lessc:docs', 'lessc:core'])
