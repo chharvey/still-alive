@@ -17,6 +17,13 @@ gulp.task('pug:docs', function () {
 })
 
 gulp.task('lessc:docs', function () {
+  gulp.src('docs/css/src/kss.less')
+    .pipe(less())
+    .pipe(autoprefixer({
+      grid: true,
+      cascade: false,
+    }))
+    .pipe(gulp.dest('./docs/css/'))
   return gulp.src('docs/css/src/docs.less')
     .pipe(less())
     .pipe(autoprefixer({

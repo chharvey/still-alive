@@ -5,8 +5,9 @@
   "private": true,
   "main": "index.js",
   "scripts": {
+    "kss": "rm -r styleguide  ;  kss --config kss-config.json && gulp lessc:docs",
     "browserify:principles": "browserify docs/js/principles.js > docs/js/principles.b.js",
-    "build": "gulp build  &&  npm run browserify:principles",
+    "build": "gulp build  &&  npm run kss  &&  npm run browserify:principles",
     "unbuild:docs": "rm docs/{index,phi,code,principles,base,obj,comp-typo,comp-ui,help,atom}.html",
     "unbuild:css": "rm css/{still-alive.css,still-alive.css.map} docs/css/docs.css",
     "unbuild:js": "rm docs/js/principles.b.js",
@@ -36,6 +37,7 @@
     "gulp-less": "^3.3.2",
     "gulp-pug": "^3.3.0",
     "gulp-sourcemaps": "^2.6.0",
+    "kss": "^3.0.0-beta.18",
     "lux-nox": "^1.2.0",
     "pug-cli": "^1.0.0-alpha6",
     "sitepage": "^1.0.0",

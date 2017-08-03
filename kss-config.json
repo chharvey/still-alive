@@ -1,0 +1,11 @@
+{
+  "title": "Still-Alive Style Guide",
+  "source": "css/src/",
+  "destination": "styleguide/",
+  "css": [
+    "https://cdn.rawgit.com/chharvey/xmeter/beta-v6/xmeter.css",
+    "https://cdn.rawgit.com/chharvey/bangs/v0.14.1/bangs.min.css",
+    "../css/still-alive.css",
+    "../docs/css/kss.css"
+  ]
+}
