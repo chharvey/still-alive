@@ -32,15 +32,16 @@
 .c-Alert {
   .font-size-el(@g-font-size-mill);
   .ui-font();
+  .ui-skin();
   .ui-lite();
   font-weight: 200;
 }
 
-.c-Alert--dang { .ui-dark(); background: @g-color_portal_deploying ; }
-.c-Alert--cshn {             background: @g-color_portal_hereye    ; }
-.c-Alert--skss {             background: @g-color_portal_neurotoxin; }
-.c-Alert--info {             background: @g-color_portal_bridges   ; }
-.c-Alert--help {             background: @g-color_portal_companion ; }
+.c-Alert--dang { .ui-dark(); --ui-bgcolor: @g-color-portal-deploying ; }
+.c-Alert--cshn {             --ui-bgcolor: @g-color-portal-hereye    ; }
+.c-Alert--skss {             --ui-bgcolor: @g-color-portal-neurotoxin; }
+.c-Alert--info {             --ui-bgcolor: @g-color-portal-bridges   ; }
+.c-Alert--help {             --ui-bgcolor: @g-color-portal-companion ; }
 
 .c-Alert__Title {
   padding-right: 1rem;
@@ -51,6 +52,6 @@
   font-weight: 600;
   text-shadow: none;
   &, &:hover {
-    color: @g-color_portal_vilify;
+    color: @g-color-portal-vilify;
   }
 }

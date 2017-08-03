@@ -35,8 +35,8 @@ body {
   font-family: @g-fontfamily-base;
   text-rendering: optimizeSpeed;
   @media screen {
-    color: @g-color_body_txt;
-    background: @g-color_body_bg;
+    color: @g-color-body_txt;
+    background: @g-color-body_bg;
     margin-bottom: (8*@g-vru);
   }
   @media screen {
@@ -102,7 +102,7 @@ h1 {
   --lines-hn: var(--lines-h1);
   text-align: center;
   font-weight: 100;
-  color: @g-color_h_major;
+  color: @g-color-h_major;
 }
 h1.old {
   font-variant: small-caps;
@@ -112,7 +112,7 @@ h2 {
   --font-size-ratio-hn: var(--font-size-ratio-h2);
   --lines-hn: var(--lines-h2);
   .hr-bottom(1px; solid; @space: 0); // alternative to .border-vert(bottom; 1px); border-bottom-style: solid;
-  color: @g-color_h_minor;
+  color: @g-color-h_minor;
 }
 h3 {
   --font-size-ratio-hn: var(--font-size-ratio-h3);
@@ -129,7 +129,7 @@ h5 {
   --lines-hn: var(--lines-h5);
   font-style: italic;
   font-weight: 400;
-  color: @g-color_h_minor;
+  color: @g-color-h_minor;
 }
 h6 {
   --font-size-ratio-hn: var(--font-size-ratio-h6);
@@ -178,7 +178,7 @@ h6 {
       & > strong {color: @solar_base01;} // [5]
     }
     @media print {
-      background-color: @g-color_portal_shadelight;
+      background-color: @g-color-portal-shadelight;
     }
     & > small,
     code, kbd, samp {
@@ -235,15 +235,15 @@ h6 {
   //    ## Links
   //--------------------------------//
   a {
-    color: @g-color_link_up;
+    color: @g-color-link_up;
     &:hover {
       text-decoration: underline;
-      color: @g-color_link_dn;
+      color: @g-color-link_dn;
     }
     &:active {
       color: inherit;
       @media screen and (max-width: 44.999em) {
-        background-color: @g-color_portal_shadelight;
+        background-color: @g-color-portal-shadelight;
       }
     }
     @media screen {
@@ -320,7 +320,7 @@ h6 {
   //--------------------------------//
   code, kbd, samp {
     @media print {
-      color: darken(@g-color_portal_repulsion, 20%);
+      color: darken(@g-color-portal-repulsion, 20%);
     }
   }
   // `code` Element.

@@ -23,6 +23,7 @@
 @badge_darken: 20%;
 .c-Badge {
   .ui-font();
+  .ui-skin();
   .ui-dark();
   padding-left:  (8em/12);
   padding-right: (8em/12);
@@ -30,8 +31,8 @@
   border-radius: 1em;
 }
 
-.c-Badge--dang { background: darken(@g-color_portal_deploying,  @badge_darken); }
-.c-Badge--cshn { background: darken(@g-color_portal_hereye,     @badge_darken); }
-.c-Badge--skss { background: darken(@g-color_portal_neurotoxin, @badge_darken); }
-.c-Badge--info { background: darken(@g-color_portal_bridges,    @badge_darken); }
-.c-Badge--help { background: darken(@g-color_portal_companion,  @badge_darken); }
+.c-Badge--dang { --ui-bgcolor: darken(@g-color-portal-deploying,  @badge_darken); }
+.c-Badge--cshn { --ui-bgcolor: darken(@g-color-portal-hereye,     @badge_darken); }
+.c-Badge--skss { --ui-bgcolor: darken(@g-color-portal-neurotoxin, @badge_darken); }
+.c-Badge--info { --ui-bgcolor: darken(@g-color-portal-bridges,    @badge_darken); }
+.c-Badge--help { --ui-bgcolor: darken(@g-color-portal-companion,  @badge_darken); }
