@@ -1,17 +1,36 @@
 
 /*################################*\
-    still-alive  |  _obj.Box.less
+    still-alive  |  _o-Box.less
 \*################################*/
 
 
+// The Box Object
+//
 // A Box Object is a block of content separated from the surrounding flow.
 // It has a default padding and border-radius, which may be overridden.
-// (Remember, when adding border-width, use `.border-vert(all; ...)` mixin.)
+// Use the Box object for stand-alone, highlighted blocks.
+// They are useful for things like alerts, pop-ups, and asides.
+// Since they have a border radius, they don’t look good in tables or table-like structures.
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2016-03-19</time></dd>
+// </dl></header>
 //
-// ^author
-// : Chris Harvey
-// ^updated
-// : 2016-03-19
+// Markup:
+// <div class="o-Box {{ modifier_class }}">Box</div>
+//
+// .o-Box--micr - Microbox
+// .o-Box--mill - Millibox
+// .o-Box--norm - Normal-sized Box
+// .o-Box--kilo - Kilobox
+// .o-Box--mega - Megabox
+// .o-Box--giga - Gigabox
+// .o-Box--tera - Terabox
+// .o-Box--peta - Petabox
+//
+// Weight: 1
+//
+// Styleguide Objects.Box
 .o-Box {
   padding: @g-boxpadd_norm;
   border-radius: 0.50rem;
@@ -50,17 +69,6 @@
   border-radius: 4rem;
 }
 
-@media screen {
-  .o-Box-s { .o-Box; }
-  .o-Box--micr-s { .o-Box--micr; }
-  .o-Box--mill-s { .o-Box--mill; }
-  .o-Box--norm-s { .o-Box--norm; }
-  .o-Box--kilo-s { .o-Box--kilo; }
-  .o-Box--mega-s { .o-Box--mega; }
-  .o-Box--giga-s { .o-Box--giga; }
-  .o-Box--tera-s { .o-Box--tera; }
-  .o-Box--peta-s { .o-Box--peta; }
-}
 @media screen and (min-width: 30em) {
   .o-Box-sK { .o-Box; }
   .o-Box--micr-sK { .o-Box--micr; }
@@ -115,15 +123,4 @@
   .o-Box--giga-sP { .o-Box--giga; }
   .o-Box--tera-sP { .o-Box--tera; }
   .o-Box--peta-sP { .o-Box--peta; }
-}
-@media print {
-  .o-Box-p { .o-Box; }
-  .o-Box--micr-p { .o-Box--micr; }
-  .o-Box--mill-p { .o-Box--mill; }
-  .o-Box--norm-p { .o-Box--norm; }
-  .o-Box--kilo-p { .o-Box--kilo; }
-  .o-Box--mega-p { .o-Box--mega; }
-  .o-Box--giga-p { .o-Box--giga; }
-  .o-Box--tera-p { .o-Box--tera; }
-  .o-Box--peta-p { .o-Box--peta; }
 }
