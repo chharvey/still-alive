@@ -6,7 +6,7 @@ mixin fontBox(typeface, has_footer)
       footer Sample footer.
     block
     h3.o-Grid__Item.-w-1o1= typeface.name
-    div.o-Grid__Item.a-w-p1
+    div.o-Grid__Item.-w-p1
       if (typeface.similar && typeface.similar[0])
         p
           | Similar:#{' '}
@@ -15,7 +15,7 @@ mixin fontBox(typeface, has_footer)
             b= name
             = ((index < typeface.similar.length-1) ? ', ' : '')
       +description()
-    div.o-Grid__Item.a-w-p2
+    div.o-Grid__Item.-w-p2
       figure.c-FontSamp(class=typeface.class)
         div.c-FontSamp__Letter Aa
         p.c-FontSamp__Sentence= typeface.sample
