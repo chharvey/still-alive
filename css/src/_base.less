@@ -32,7 +32,7 @@
 //    # SECTIONS
 //++++++++++++++++++++++++++++++++//
 body {
-  font-family: @g-font_family_base;
+  font-family: @g-fontfamily-base;
   text-rendering: optimizeSpeed;
   @media screen {
     color: @g-color_body_txt;
@@ -101,7 +101,7 @@ body {
 @p-lines_h6_sT: ceil(@p-font-size-h6_sT / @g-line-height); // 1
 // ---- @media screen and (min-width: 90em) ---- //
 h1, h2, h3, h4, h5, h6 {
-  font-family: @g-font_family_heading;
+  font-family: @g-fontfamily-heading;
   font-weight: 800; // "ExtraBlack", special font-weight for 'Optima' family
   text-rendering: geometricPrecision;
   .transitions(font-size, line-height; @g-ani_short);
@@ -183,7 +183,7 @@ h6 {
   // : 2016-03-16
   pre {
     .font-size-el(@g-font-size-mill);
-    font-family: @g-font_family_code;
+    font-family: @g-fontfamily-code;
     // [1] `.o-Box`
     // [2] `.t-bg-lun-lite`
     // [3] `.t-fg-sol-lite`
@@ -304,7 +304,7 @@ h6 {
   // }
   i {
     &[lang] {
-      font-family: @g-font_family_math;
+      font-family: @g-fontfamily-math;
     }
     &:not([lang]) {
       .quotes-double();
@@ -316,7 +316,7 @@ h6 {
   //    ## Doc
   //--------------------------------//
   dfn {
-    font-family: @g-font_family_prose;
+    font-family: @g-fontfamily-prose;
   }
   // important terms should not break across lines
   dfn, b, abbr {
@@ -356,7 +356,7 @@ h6 {
   // : 2016-03-16
   code {
     font-variant: normal; // for code in headings
-    font-family: @g-font_family_code;
+    font-family: @g-fontfamily-code;
     // any `code` Element will have a boxy look.
     // [1] `.o-Textbox`
     // [2] `.t-bg-sol-lite`

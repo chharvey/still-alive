@@ -133,43 +133,43 @@ module.exports = class Docs {
       // REVIEW indentation
     base : {
       name    : 'Avenir Next'
-    , class   : 'a-ff-base'
+    , class   : '-ff-base'
     , sample  : 'The quick brown fox jumps over the lazy dog.'
     , similar : [ 'Helvetica Neue' ]
     }
   , heading : {
       name    : 'Optima'
-    , class   : 'a-ff-heading'
+    , class   : '-ff-heading'
     , sample  : 'Oh, sphinx of black quartz, judge my vow.'
     , similar : [ 'Seravek' , 'Tahoma' ]
     }
   , prose : {
       name    : 'Baskerville'
-    , class   : 'a-ff-prose'
+    , class   : '-ff-prose'
     , sample  : 'The five boxing wizards jump quickly.'
     , similar : [ 'Palatino' , 'Cochin' ]
     }
   , accent : {
       name    : 'Helvetica Neue'
-    , class   : 'a-ff-accent'
+    , class   : '-ff-accent'
     , sample  : 'Heavy boxes perform quick waltzes and jigs.'
     , similar : [ 'Helvetica' ]
     }
   , code : {
       name    : 'Menlo'
-    , class   : 'a-ff-code'
+    , class   : '-ff-code'
     , sample  : 'The quick brown fox jumps over the lazy dog.'
     , similar : [ 'Monaco' , 'Andale Mono' ]
     }
   , math : {
       name    : 'Didot'
-    , class   : 'a-ff-math'
+    , class   : '-ff-math'
     , sample  : 'Sixty zippers were quickly picked from the woven jute bag.'
     , similar : [ 'Bodoni 72' , 'Times' ]
     }
   , script : {
       name    : 'Zapfino'
-    , class   : 'a-ff-script'
+    , class   : '-ff-script'
     , sample  : 'The quick brown fox jumps over the lazy dog.'
     }
     }
