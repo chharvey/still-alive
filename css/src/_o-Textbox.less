@@ -1,0 +1,38 @@
+
+/*################################*\
+    still-alive  |  _o-Textbox.less
+\*################################*/
+
+
+// The Textbox Object
+//
+// The Textbox Object is similar to the Box object except that it is used for
+// **inline text only**, such as labels or badges.
+// A Textbox Object is a box of text inline with its surrounding phrasing content.
+// This textbox is not broken across lines.
+// It has a default padding and border radius, which may be overridden.
+// Since this Object is inline, its sizing measurements are in ems, not rems.
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2016-03-20</time></dd>
+// </dl></header>
+//
+// Markup:
+// <h1>Example h1 <span class="o-Textbox">Textbox</span></h1>
+// <h2>Example h2 <span class="o-Textbox">Textbox</span></h2>
+// <h3>Example h3 <span class="o-Textbox">Textbox</span></h3>
+// <h4>Example h4 <span class="o-Textbox">Textbox</span></h4>
+// <h5>Example h5 <span class="o-Textbox">Textbox</span></h5>
+// <h6>Example h6 <span class="o-Textbox">Textbox</span></h6>
+// <p>Example paragraph <span class="o-Textbox">Textbox</span></p>
+//
+// Weight: 2
+//
+// Styleguide Objects.Textbox
+.o-Textbox {
+  @fz: @g-font-size-mill;
+  .mx-boxpadd-il(@fz);
+  font-size: (@fz * 1em);
+  white-space: nowrap;
+  border-radius: 0.25em;
+}

@@ -16,7 +16,6 @@
 #kssref-objects-box {
   .o-Box {
     margin-bottom: var(--vru);
-    background-color: @g-color-portal-shadelight;
   }
   .o-Box--micr {
     margin-top: calc(~'-0.25 * var(--vru)');
@@ -24,4 +23,9 @@
   .o-Box--mill {
     margin-top: calc(~'-0.5  * var(--vru)');
   }
+}
+
+#kssref-objects-box .o-Box,
+#kssref-objects-textbox .o-Textbox {
+  background-color: @g-color-portal-shadelight;
 }
