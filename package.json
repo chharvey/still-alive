@@ -5,11 +5,11 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "browserify:principles": "browserify docs/scripts/principles.js > docs/scripts/principles.b.js",
+    "browserify:principles": "browserify docs/js/principles.js > docs/js/principles.b.js",
     "build": "gulp build  &&  npm run browserify:principles",
     "unbuild:docs": "rm docs/{index,phi,code,principles,base,obj,comp-typo,comp-ui,help,atom}.html",
     "unbuild:css": "rm css/{still-alive.css,still-alive.css.map} docs/css/docs.css",
-    "unbuild:js": "rm docs/scripts/principles.b.js",
+    "unbuild:js": "rm docs/js/principles.b.js",
     "unbuild": "npm run unbuild:docs  &&  npm run unbuild:css  &&  npm run unbuild:js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
