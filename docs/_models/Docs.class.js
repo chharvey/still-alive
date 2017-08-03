@@ -102,7 +102,6 @@ const DOCS = new Page({ name: 'Site Design', url: '/docs/' })
     )
     .add(new Page({ name: 'Atoms', url: '/docs/atom.html' })
       .add(new Page({ name: 'Font Families', url: '/docs/atom.html#font-families' }))
-      .add(new Page({ name: 'Font Sizes'   , url: '/docs/atom.html#font-sizes' }))
       .add(new Page({ name: 'Colors'       , url: '/docs/atom.html#colors' }))
     )
 
