@@ -1,4 +1,6 @@
 var Page = require('sitepage').Page
+var Util = require('helpers-js').Util
+var Element = require('helpers-js').Element
 
 /**
  * A blog post article.
@@ -39,8 +41,8 @@ module.exports = class BlogPost extends Page {
   addTimestamp(datetime, statuses = []) {
     this._history.push({
       datetime   : /** @type {Date} */    datetime,
-      is_complete: /** @type {boolean} */ statuses.indexOf(BlogPost.Status.COMPLETE) >= 0,
-      is_released: /** @type {boolean} */ statuses.indexOf(BlogPost.Status.RELEASED) >= 0,
+      is_complete: /** @type {boolean} */ statuses.includes(BlogPost.Status.COMPLETE),
+      is_released: /** @type {boolean} */ statuses.includes(BlogPost.Status.RELEASED),
     })
     return this
   }
@@ -54,71 +56,110 @@ module.exports = class BlogPost extends Page {
   }
 
   /**
-   * Print the document metadata for this blog post.
-   * @return {string} an HTML string .c-Document__Meta component
+   * Render this blog post in HTML.
+   * Displays:
+   * - `BlogPost#view()` - default display
+   * - `BlogPost#docMeta()` - document meta component
+   * - `BlogPost#statusAlert()` - alert indicating this post’s status
+   * @return {string} HTML output
    */
-  renderDocMeta() {
-    return `
-      <dl class="c-Document__Meta">
-        <dt>Author</dt>
-        <dd itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <a href="//chharvey.github.io/" rel="author" itemprop="url">
-            <span itemprop="name">
-              <span itemprop="givenName">Christopher</span>
-              <span itemprop="additionalName">H.</span>
-              <span itemprop="familyName">Harvey</span>
-            </span>
-          </a>
-        </dd>
-        <dt>Description</dt>
-        <dditemprop="description">${this.description()}</dd>
-        <dt>Keywords</dt>
-        ${this.keywords().map((kwd) => `<dd itemprop="keywords">${kwd}</dd>`)}
-        <dt>Version History</dt>
-        ${this.getTimeStampsAll().map(function (revision, index) {
-          let itemprop_val = ''
-          let label = ''
-          if (revision.is_complete) {
-            itemprop_val += 'dateCreated '
-            label += `<span class="o-Textbox c-Label c-Label--cshn -ml-1">Completed</span>`
-          }
-          if (revision.is_released) {
-            itemprop_val += 'datePublished'
-            label += `<span class="o-Textbox c-Label c-Label--skss -ml-1">Released</span>`
-          }
-          if (index === this.getTimestampsAll().length-1) {
-            itemprop_val += ' dateModified'
-            label += `<span class="o-Textbox c-Label c-Label--dang -ml-1">Latest</span>`
-          }
-          return `
-            <dd class="update">
-              <time datetime=${revision.datetime}${(itemprop_val) ? ' itemprop="itemprop_val"' : ''}>
-                MMM DD, YYYY <span class="tod">HH:MM</span>
-              </time>
-              ${label}
-            </dd>
-          `
-        }, this)}
-      </dl>
-    `
+  get view() {
+    let self = this
+    /**
+     * Default display. Takes no arguments.
+     * Call `BlogPost#view()` to render this display.
+     * @return {string} HTML output
+     */
+    function returned() {
+      return (function () {
+        throw new Error('feature not yet supported')
+      }).call(self)
+    }
+    /**
+     * Return a <dl.c-Document__Meta> component, the document metadata for this blog post.
+     * Call `BlogPost#view.docMeta()` to render this display.
+     * @return {string} HTML output
+     */
+    returned.docMeta = function () {
+      return (function () {
+        return new Element('dl').class('c-Document__Meta').addElements([
+          new Element('dt').addContent(`Author`),
+          new Element('dd').attr({ itemprop:'author', itemscope:'', itemtype:'http://schema.org/Person' }).addElements([
+            new Element('a').attr({ href:'//chharvey.github.io/', rel:'author', itemprop:'url' }).addElements([
+              new Element('span').attr('itemprop','name').addElements([
+                new Element('span').attr('itemprop','givenName').addContent(`Christopher`),
+                new Element('span').attr('itemprop','additionalName').addContent(`H.`),
+                new Element('span').attr('itemprop','familyName').addContent(`Harvey`),
+              ])
+            ])
+          ]),
+          new Element('dt').addContent(`Description`),
+          new Element('dd').attr('itemprop','description').addContent(this.description()),
+          new Element('dt').addContent(`Keywords`),
+          ...this.keywords().map((kwd) => new Element('dd').attr('itemprop','keywords').addContent(kwd)),
+          new Element('dt').addContent(`Version History`),
+          ...this._history.map(function (revision, index) {
+            return new Element('dd').class('update').addElements([
+              new Element('time')
+                .attr({
+                  datetime: revision.datetime,
+                  itemprop: [
+                    (revision.is_complete)             ? 'dateCreated'   : '',
+                    (revision.is_released)             ? 'datePublished' : '',
+                    (index === this._history.length-1) ? 'dateModified'  : '',
+                  ].join(' ').trim() || null,
+                })
+                .addContent(`${Util.Date.format(revision.datetime, 'j M Y')} `)
+                .addElements([ new Element('span').class('tod').addContent(Util.Date.format(revision.datetime, 'H:i')) ]),
+              ...(function (revision, index) {
+                /**
+                 * Generates a label for “Completed”, “Released”, or “Latest”.
+                 * @param  {string} type exactly one of `'cshn'`, `'skss'`, or `'dang'`
+                 * @return {Element} a <span> element label
+                 */
+                function label(type) {
+                  return new Element('span').class('o-Textbox c-Label -ml-1')
+                    .addClass(`c-Label--${type}`)
+                    .addContent(({
+                      cshn: `Completed`,
+                      skss: `Released`,
+                      dang: `Latest`,
+                    })[type] || '')
+                }
+                return [
+                  (revision.is_complete)             ? label('cshn') : null,
+                  (revision.is_released)             ? label('skss') : null,
+                  (index === this._history.length-1) ? label('dang') : null,
+                ]
+              }).call(this, revision, index),
+            ])
+          }, this),
+        ]).html()
+      }).call(self)
+    }
+    /**
+     * Return a <p.c-Alert> component indicating this blog post’s status.
+     * If this blog post has no status set, the empty string `''` is returned.
+     * Call `BlogPost#view.statusAlert()` to render this display.
+     * @return {string} HTML output
+     */
+    returned.statusAlert = function () {
+      return (function () {
+        if (!this.status()) return ''
+        let statusmap = {
+          [BlogPost.Status.DRAFT   ]: { sfx: 'dang', text: 'This document is a work in progress.' },
+          [BlogPost.Status.COMPLETE]: { sfx: 'cshn', text: 'This document is in the final stages of comple\u00adtion.' }, // U+00ad &shy; soft hyphen
+          [BlogPost.Status.RELEASED]: { sfx: 'skss', text: 'This document is ready for implemen\u00adtation.' }, // U+00ad &shy; soft hyphen
+        }
+        return new Element('p').class('o-GoldenContainer__Content__SideMinor o-Box c-Alert')
+          .addClass(`c-Alert--${statusmap[this.status()].sfx}`)
+          .addContent(statusmap[this.status()].text)
+          .html()
+      }).call(self)
+    }
+    return returned
   }
 
-  /**
-   * Print an alert to readers of this blog posts, indicating its status.
-   * @return {string} an HTML string status alert for this blog post
-   */
-  renderStatusAlert() {
-    let statusmap = {} // cannot make object literals with non-string keys
-    statusmap[BlogPost.Status.DRAFT   ] = { sfx: 'dang', text: 'This document is a work in progress.' }
-    statusmap[BlogPost.Status.COMPLETE] = { sfx: 'cshn', text: 'This document is in the final stages of comple\u00adtion.' } // U+00ad &shy; soft hyphen
-    statusmap[BlogPost.Status.RELEASED] = { sfx: 'skss', text: 'This document is ready for implemen\u00adtation.' } // U+00ad &shy; soft hyphen
-    return `
-      <p class="o-GoldenContainer__Content__SideMinor o-Box c-Alert c-Alert--${statusmap[this.status()].sfx}"
-        itemprop="creativeWorkStatus" itemscope="" itemtype=${this.status()}>
-        ${statusmap[this.status()].text}
-      </p>
-    `
-  }
 
   /**
    * A set of possible statuses for a post.
