@@ -36,6 +36,7 @@
     "gulp-less": "^3.3.2",
     "gulp-pug": "^3.3.0",
     "gulp-sourcemaps": "^2.6.0",
+    "helpers-js": "^0.4.0",
     "lux-nox": "^1.2.0",
     "pug-cli": "^1.0.0-alpha6",
     "sitepage": "^1.0.0",
