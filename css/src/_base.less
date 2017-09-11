@@ -1,0 +1,369 @@
+
+/*################################*\
+    still-alive  |  _base.less
+\*################################*/
+
+
+// Table of Contents
+// # GENERIC........................`html` and far-reaching page-wide selectors
+// # SECTIONS.......................sections, articles, headers, footers, headings
+// # GROUPING.......................grouping content
+//   ## Paragraphs......................paragraphs, block-level textual elements
+//   ## Lists...........................ordered, unordered, dictionary
+//   ## Tables..........................tables
+// # TEXT...........................text-level, phrasing (inline) content and links
+//   ## Links...........................inline hyperlinks
+//   ## Stress..........................text outstanding from surrounding prose
+//   ## Doc.............................documentation elements
+//   ## Data............................machine- or human-readable data
+// # FORMS..........................form elements
+// # EMBEDDED.......................images, videos, other media
+// # INTERACTIVE....................user-interactive HTML elements
+
+
+
+//++++++++++++++++++++++++++++++++//
+//    # GENERIC
+//++++++++++++++++++++++++++++++++//
+//++++ end # GENERIC ++++//
+
+
+//++++++++++++++++++++++++++++++++//
+//    # SECTIONS
+//++++++++++++++++++++++++++++++++//
+body {
+  font-family: @g-fontfamily-base;
+  text-rendering: optimizeSpeed;
+  @media screen {
+    color: @g-color-body_txt;
+    background: @g-color-body_bg;
+    margin-bottom: (8*@g-vru);
+  }
+  @media screen {
+    --font-size-ratio-h1: @g-font-size-h1; // 32/16 // 2.000
+    --font-size-ratio-h2: @g-font-size-h2; // 24/16 // 1.500
+    --font-size-ratio-h3: @g-font-size-h3; // 20/16 // 1.250
+    --font-size-ratio-h4: @g-font-size-h4; // 16/16 // 1.000
+    --font-size-ratio-h5: @g-font-size-h5; // 14/16 // 0.875
+    --font-size-ratio-h6: @g-font-size-h6; // 12/16 // 0.750
+    --lines-h1: calc(~'ceil(var(--font-size-h1) / var(--line-height))');
+    --lines-h2: calc(~'ceil(var(--font-size-h2) / var(--line-height))');
+    --lines-h3: calc(~'ceil(var(--font-size-h3) / var(--line-height))');
+    --lines-h4: calc(~'ceil(var(--font-size-h4) / var(--line-height))');
+    --lines-h5: calc(~'ceil(var(--font-size-h5) / var(--line-height))');
+    --lines-h6: calc(~'ceil(var(--font-size-h6) / var(--line-height))');
+  }
+  @media screen and (min-width: 30em) {
+    // --font-size-ratio-h1: @g-font-size-h1; // 32/16 // 2.000
+    // --font-size-ratio-h2: @g-font-size-h2; // 24/16 // 1.500
+    // --font-size-ratio-h3: @g-font-size-h3; // 20/16 // 1.250
+    // --font-size-ratio-h4: @g-font-size-h4; // 16/16 // 1.000
+    // --font-size-ratio-h5: @g-font-size-h5; // 14/16 // 0.875
+    // --font-size-ratio-h6: @g-font-size-h6; // 12/16 // 0.750
+  }
+  @media screen and (min-width: 45em) {
+    --font-size-ratio-h1: 48/16; // 3.000
+    --font-size-ratio-h2: 32/16; // 2.000
+    --font-size-ratio-h3: 24/16; // 1.500
+    --font-size-ratio-h4: 20/16; // 1.250
+    --font-size-ratio-h5: 16/16; // 1.000
+    --font-size-ratio-h6: 12/16; // 0.750
+  }
+  @media screen and (min-width: 60em) {
+    --font-size-ratio-h1: 64/16; // 4.000
+    --font-size-ratio-h2: 48/16; // 3.000
+    --font-size-ratio-h3: 32/16; // 2.000
+    --font-size-ratio-h4: 24/16; // 1.500
+    --font-size-ratio-h5: 20/16; // 1.250
+    --font-size-ratio-h6: 16/16; // 1.000
+  }
+  @media screen and (min-width: 75em) {
+    --font-size-ratio-h1: 80/16; // 5.000
+    --font-size-ratio-h2: 64/16; // 4.000
+    --font-size-ratio-h3: 48/16; // 3.000
+    --font-size-ratio-h4: 32/16; // 2.000
+    --font-size-ratio-h5: 24/16; // 1.500
+    --font-size-ratio-h6: 20/16; // 1.250
+  }
+  @media screen and (min-width: 90em) {
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    // copied from Xmeter .font-size-el()
+    font-size: calc(~'var(--font-size-ratio-hn) * 1em');
+    line-height: calc(~'var(--line-height) / (var(--font-size-ratio-hn) / var(--lines-hn))');
+  font-family: @g-fontfamily-heading;
+  font-weight: 800; // "ExtraBlack", special font-weight for 'Optima' family
+  text-rendering: geometricPrecision;
+}
+h1 {
+  --font-size-ratio-hn: var(--font-size-ratio-h1);
+  --lines-hn: var(--lines-h1);
+  text-align: center;
+  font-weight: 100;
+  color: @g-color-h_major;
+}
+h1.old {
+  font-variant: small-caps;
+  font-weight: 800; // reset to specified
+}
+h2 {
+  --font-size-ratio-hn: var(--font-size-ratio-h2);
+  --lines-hn: var(--lines-h2);
+  .hr-bottom(1px; solid; @space: 0); // alternative to .border-vert(bottom; 1px); border-bottom-style: solid;
+  color: @g-color-h_minor;
+}
+h3 {
+  --font-size-ratio-hn: var(--font-size-ratio-h3);
+  --lines-hn: var(--lines-h3);
+  font-variant: small-caps;
+}
+h4 {
+  --font-size-ratio-hn: var(--font-size-ratio-h4);
+  --lines-hn: var(--lines-h4);
+  font-style: italic;
+}
+h5 {
+  --font-size-ratio-hn: var(--font-size-ratio-h5);
+  --lines-hn: var(--lines-h5);
+  font-style: italic;
+  font-weight: 400;
+  color: @g-color-h_minor;
+}
+h6 {
+  --font-size-ratio-hn: var(--font-size-ratio-h6);
+  --lines-hn: var(--lines-h6);
+  font-style: italic;
+  font-weight: 400;
+  font-variant: small-caps;
+}
+//++++ end # SECTIONS ++++//
+
+
+//++++++++++++++++++++++++++++++++//
+//    # GROUPING
+//++++++++++++++++++++++++++++++++//
+  //--------------------------------//
+  //    ## Paragraphs
+  //--------------------------------//
+  // `pre` Element.
+  // Use only `pre` for blocks of code. Do not use child `code` Element for entire block.
+  //
+  // Child Elements:
+  // `> code`   - fragments of code (per usual)
+  // `> small`  - code comments
+  // `> strong` - importance
+  //
+  // ^author
+  // : Chris Harvey
+  // ^updated
+  // : 2016-03-16
+  pre {
+    .font-size-el(@g-font-size-mill);
+    font-family: @g-fontfamily-code;
+    // [1] `.o-Box`
+    // [2] `.t-bg-lun-lite`
+    // [3] `.t-fg-sol-lite`
+    // [4] `.t-fg-sol-lite > .c__Comm`
+    // [5] `.t-fg-sol-lite > .c__Emph`
+    @media screen {
+      padding: @g-boxpadd_norm; // [1]
+      border-radius: 0.50rem;   // [1]
+      overflow: auto;
+      background: @lunar_base3;   // [2]
+      color: @solar_base00;       // [3]
+      box-shadow: 0 0 0 2px @lunar_base2; // [2] // border hack
+      & > small  {color: @solar_base1;}  // [4]
+      & > strong {color: @solar_base01;} // [5]
+    }
+    @media print {
+      background-color: @g-color-portal-shadelight;
+    }
+    & > small,
+    code, kbd, samp {
+      font-size: inherit; // undo compounding font sizes
+    }
+    & > small {
+      font-style: italic;
+    }
+  }
+  figure,
+  blockquote {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  figcaption {
+    .font-size-el(@g-font-size-mill);
+  }
+
+  blockquote {
+    & > footer {
+      text-align: right;
+      & > cite {
+        .parens();
+      }
+    }
+  }
+  //---- end ## Paragraphs ----//
+
+  //--------------------------------//
+  //    ## Lists
+  //--------------------------------//
+  ul {
+    list-style-type: square;
+  }
+  //---- end ## Lists ----//
+
+  //--------------------------------//
+  //    ## Tables
+  //--------------------------------//
+  table {
+    .font-size-el(@g-font-size-mill);
+  }
+  th, td {
+    padding: (0.25 * @g-vru) (0.5 * 1rem);
+  }
+  //---- end ## Tables ----//
+//++++ end # GROUPING ++++//
+
+
+//++++++++++++++++++++++++++++++++//
+//    # TEXT
+//++++++++++++++++++++++++++++++++//
+  //--------------------------------//
+  //    ## Links
+  //--------------------------------//
+  a {
+    color: @g-color-link_up;
+    &:hover {
+      text-decoration: underline;
+      color: @g-color-link_dn;
+    }
+    &:active {
+      color: inherit;
+      @media screen and (max-width: 44.999em) {
+        background-color: @g-color-portal-shadelight;
+      }
+    }
+    @media screen {
+      transition: color @g-ani_short;
+    }
+  }
+  a[rel~="external"] { font-style: italic; }
+  // mobile device styles:
+  // @updated
+  // : 2015-02-17
+  // a[href] {
+  //   border-radius: 3px;
+  //   &:active {
+  //     background-color: @color_crumb_dn_bg;
+  //   }
+  // }
+  //---- end ## Links ----//
+
+  //--------------------------------//
+  //    ## Stress
+  //--------------------------------//
+  // Refers to the first sentence/expression in a paragraph/caption, which may
+  // act as a "heading" or "title" for that paragraph/caption.
+  // It may also contain the title of a `table` or `figure` inside the `table > caption` or
+  // `figure > figcaption`, respectively. For example, it might contain "Figure 1."
+  // Usually a child of a paragraph, caption, or alert.
+  // Can also be useful in a list whose items consist of long prose text.
+  //
+  // ^author
+  // : Chris Harvey
+  // ^updated
+  // : 2015-04-30
+  // .Title {
+  //   padding-right: 1rem;
+  //   font-weight: 700;
+  // }
+  i {
+    &[lang] {
+      font-family: @g-fontfamily-math;
+    }
+    &:not([lang]) {
+      .quotes-double();
+    }
+  }
+  //---- end ## Stress ----//
+
+  //--------------------------------//
+  //    ## Doc
+  //--------------------------------//
+  dfn {
+    font-family: @g-fontfamily-prose;
+  }
+  // important terms should not break across lines
+  dfn, b, abbr {
+    white-space: nowrap;
+  }
+  var {
+    .guillemets-single();
+  }
+  // Represents an altered voice in the form of a thought. Like a quote but silent.
+  // May be applied to the `q` Element.
+  //
+  // ^author
+  // : Chris Harvey
+  // ^updated
+  // : 2014-05-25
+  // .q--Th {
+  //   .guillemets-double();
+  // }
+  //---- end ## Doc ----//
+
+  //--------------------------------//
+  //    ## Data
+  //--------------------------------//
+  code, kbd, samp {
+    @media print {
+      color: darken(@g-color-portal-repulsion, 20%);
+    }
+  }
+  // `code` Element.
+  // No `code` Elements is allowed inside `pre` Elements for the
+  // purpose of marking up blocks of code. Any `pre code` is used
+  // per its usual meaning: a fragment of code
+  //
+  // ^author
+  // : Chris Harvey
+  // ^updated
+  // : 2016-03-16
+  code {
+    font-variant: normal; // for code in headings
+    font-family: @g-fontfamily-code;
+    // any `code` Element will have a boxy look.
+    // [1] `.o-Textbox`
+    // [2] `.t-bg-sol-lite`
+    // [3] `.t-fg-lun-lite`
+    @media screen {
+      .mx-boxpadd-il(@g-font-size-mill); // [1]
+      border-radius: 0.25em;          // [1]
+      background: @solar_base3;       // [2]
+      border: 1px solid @solar_base2; // [2]
+      color: @lunar_base00;           // [3]
+    }
+  }
+  //---- end ## Data ----//
+//++++ end # TEXT ++++//
+
+
+//++++++++++++++++++++++++++++++++//
+//    # FORMS
+//++++++++++++++++++++++++++++++++//
+//++++ end # FORMS ++++//
+
+
+//++++++++++++++++++++++++++++++++//
+//    # EMBEDDED
+//++++++++++++++++++++++++++++++++//
+//++++ end # EMBEDDED ++++//
+
+
+//++++++++++++++++++++++++++++++++//
+//    # INTERACTIVE
+//++++++++++++++++++++++++++++++++//
+//++++ end # INTERACTIVE ++++//

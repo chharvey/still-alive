@@ -1,0 +1,45 @@
+
+/*################################*\
+    still-alive  |  _comp.typo.Subhead.less
+\*################################*/
+
+
+// This Component represents a generic tagline for a top-level heading, called a "subheading".
+// Do not include this component inside a heading Element (it will become part of the
+// document outline if you do). Instead, this tagline should be the adjacent sibling to the
+// corresponding heading.
+//
+// Use this Object to represent subtitles for top-level headings only (`h1`). There is no need
+// to use it for minor headings (`h2`–`h6`).
+//
+// ^example
+// : <h1> The heading </h1>
+// : <p class="c-Subhead"> The subheading </p>
+// ^author
+// : Chris Harvey
+// ^updated
+// : 2016-02-02
+.c-Subhead {
+  @media screen {
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    font-family: @g-fontfamily-script;
+    text-align: center;
+    text-rendering: geometricPrecision;
+    color: @g-color-h_sub;
+  }
+  @media screen { // @s
+    // script typeface has large ascenders & descenders
+    .font-size-el(@g-font-size-norm; 2);
+  }
+  @media screen and (min-width: 45em) { // @sM
+    .font-size-el(@g-font-size-kilo; 1);
+  }
+  @media screen and (min-width: 60em) { // @sG
+    .font-size-el(@g-font-size-mega; 2);
+  }
+  @media screen and (min-width: 75em) { // @sT
+    .font-size-el(@g-font-size-giga; 2);
+  }
+}
