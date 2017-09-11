@@ -1,6 +1,6 @@
 {
   "name": "still-alive",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Theme and Style Guide for my website, chharvey.github.io",
   "private": true,
   "main": "index.js",
