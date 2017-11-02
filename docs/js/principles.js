@@ -1,4 +1,4 @@
-var Color = require('csscolor').Color
+const Color = require('extrajs-color')
 
 function fontdemo(self) {
   return $(self).closest('.o-Grid').find('.c-FontSamp')
