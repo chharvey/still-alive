@@ -43,6 +43,7 @@
   "dependencies": {
     "extrajs": "^0.9.0",
     "extrajs-dom": "^3.2.0-beta",
+    "extrajs-view": "^1.1.0",
     "sitepage": "^1.0.0"
   }
 }
