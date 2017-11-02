@@ -1,6 +1,6 @@
-var Page = require('sitepage').Page
-var Util = require('helpers-js').Util
-var Element = require('helpers-js').Element
+const Page    = require('sitepage').Page
+const xjs     = require('extrajs')
+const Element = require('extrajs-dom').Element
 
 /**
  * A blog post article.
@@ -109,8 +109,8 @@ module.exports = class BlogPost extends Page {
                     (index === this._history.length-1) ? 'dateModified'  : '',
                   ].join(' ').trim() || null,
                 })
-                .addContent(`${Util.Date.format(revision.datetime, 'j M Y')} `)
-                .addElements([ new Element('span').class('tod').addContent(Util.Date.format(revision.datetime, 'H:i')) ]),
+                .addContent(`${xjs.Date.format(revision.datetime, 'j M Y')} `)
+                .addElements([ new Element('span').class('tod').addContent(xjs.Date.format(revision.datetime, 'H:i')) ]),
               ...(function (revision, index) {
                 /**
                  * Generates a label for “Completed”, “Released”, or “Latest”.
