@@ -138,7 +138,7 @@ module.exports = class BlogPost extends Page {
                   (revision.is_released)             ? label('skss') : null,
                   (index === this._history.length-1) ? label('dang') : null,
                 ]
-            }).call(this, revision, index)),
+            }).call(this, revision, index))
           ),
         ]).html()
       })
